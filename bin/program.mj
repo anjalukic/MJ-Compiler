@@ -1,0 +1,26 @@
+program MJProgram
+	int x.,.s; int y;
+{
+	
+	int k (char .g, bool a) int c; {
+		c = 1;
+		return c+2;
+	}
+	
+	int main(int .k, 
+	
+	
+	
+	char .b,
+	
+	
+	int abv
+	) {
+		for ( i =0;i<3;i++) {if (i<2) a++;}
+		a=.1;
+		if (a>3) a++; else a--;
+		if (a>2)
+			if (a<3) a++;
+			else a--;
+	}
+}
