@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class LessEqualOp extends Relop {
 
-    public LessEqualOp () {
+    private String LteString;
+
+    public LessEqualOp (String LteString) {
+        this.LteString=LteString;
+    }
+
+    public String getLteString() {
+        return LteString;
+    }
+
+    public void setLteString(String LteString) {
+        this.LteString=LteString;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class LessEqualOp extends Relop {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("LessEqualOp(\n");
+
+        buffer.append(" "+tab+LteString);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [LessEqualOp]");

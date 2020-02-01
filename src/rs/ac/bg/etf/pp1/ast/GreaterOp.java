@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class GreaterOp extends Relop {
 
-    public GreaterOp () {
+    private String GtString;
+
+    public GreaterOp (String GtString) {
+        this.GtString=GtString;
+    }
+
+    public String getGtString() {
+        return GtString;
+    }
+
+    public void setGtString(String GtString) {
+        this.GtString=GtString;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class GreaterOp extends Relop {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("GreaterOp(\n");
+
+        buffer.append(" "+tab+GtString);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [GreaterOp]");

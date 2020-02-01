@@ -1,18 +1,21 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:58
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ForStatement extends Statement {
 
+    private ForT ForT;
     private DesignatorStmtOptional DesignatorStmtOptional;
     private ConditionOptional ConditionOptional;
     private DesignatorStmtOptional DesignatorStmtOptional1;
     private Statement Statement;
 
-    public ForStatement (DesignatorStmtOptional DesignatorStmtOptional, ConditionOptional ConditionOptional, DesignatorStmtOptional DesignatorStmtOptional1, Statement Statement) {
+    public ForStatement (ForT ForT, DesignatorStmtOptional DesignatorStmtOptional, ConditionOptional ConditionOptional, DesignatorStmtOptional DesignatorStmtOptional1, Statement Statement) {
+        this.ForT=ForT;
+        if(ForT!=null) ForT.setParent(this);
         this.DesignatorStmtOptional=DesignatorStmtOptional;
         if(DesignatorStmtOptional!=null) DesignatorStmtOptional.setParent(this);
         this.ConditionOptional=ConditionOptional;
@@ -21,6 +24,14 @@ public class ForStatement extends Statement {
         if(DesignatorStmtOptional1!=null) DesignatorStmtOptional1.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
+    }
+
+    public ForT getForT() {
+        return ForT;
+    }
+
+    public void setForT(ForT ForT) {
+        this.ForT=ForT;
     }
 
     public DesignatorStmtOptional getDesignatorStmtOptional() {
@@ -60,6 +71,7 @@ public class ForStatement extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ForT!=null) ForT.accept(visitor);
         if(DesignatorStmtOptional!=null) DesignatorStmtOptional.accept(visitor);
         if(ConditionOptional!=null) ConditionOptional.accept(visitor);
         if(DesignatorStmtOptional1!=null) DesignatorStmtOptional1.accept(visitor);
@@ -68,6 +80,7 @@ public class ForStatement extends Statement {
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ForT!=null) ForT.traverseTopDown(visitor);
         if(DesignatorStmtOptional!=null) DesignatorStmtOptional.traverseTopDown(visitor);
         if(ConditionOptional!=null) ConditionOptional.traverseTopDown(visitor);
         if(DesignatorStmtOptional1!=null) DesignatorStmtOptional1.traverseTopDown(visitor);
@@ -75,6 +88,7 @@ public class ForStatement extends Statement {
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ForT!=null) ForT.traverseBottomUp(visitor);
         if(DesignatorStmtOptional!=null) DesignatorStmtOptional.traverseBottomUp(visitor);
         if(ConditionOptional!=null) ConditionOptional.traverseBottomUp(visitor);
         if(DesignatorStmtOptional1!=null) DesignatorStmtOptional1.traverseBottomUp(visitor);
@@ -86,6 +100,12 @@ public class ForStatement extends Statement {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ForStatement(\n");
+
+        if(ForT!=null)
+            buffer.append(ForT.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(DesignatorStmtOptional!=null)
             buffer.append(DesignatorStmtOptional.toString("  "+tab));

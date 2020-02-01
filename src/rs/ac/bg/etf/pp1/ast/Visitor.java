@@ -1,39 +1,39 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
-    public void visit(Designator Designator);
     public void visit(MethodDecl MethodDecl);
-    public void visit(Factor Factor);
-    public void visit(VarMulDeclList VarMulDeclList);
-    public void visit(DesignatorStatement DesignatorStatement);
-    public void visit(ConstDecl ConstDecl);
-    public void visit(DesignatorStmtOptional DesignatorStmtOptional);
-    public void visit(ActualParamList ActualParamList);
-    public void visit(CondFact CondFact);
-    public void visit(Expr Expr);
-    public void visit(FormalParamList FormalParamList);
-    public void visit(Decl Decl);
-    public void visit(FormPars FormPars);
-    public void visit(VarDeclList VarDeclList);
-    public void visit(VarDecl VarDecl);
-    public void visit(ConstDeclList ConstDeclList);
-    public void visit(FormalParamDecl FormalParamDecl);
-    public void visit(MethodDeclList MethodDeclList);
-    public void visit(DeclList DeclList);
-    public void visit(Statement Statement);
     public void visit(Relop Relop);
-    public void visit(CondTerm CondTerm);
-    public void visit(Condition Condition);
-    public void visit(Term Term);
+    public void visit(FormalParamDecl FormalParamDecl);
     public void visit(ConditionOptional ConditionOptional);
     public void visit(StatementList StatementList);
+    public void visit(Factor Factor);
+    public void visit(CondTerm CondTerm);
+    public void visit(DeclList DeclList);
+    public void visit(Designator Designator);
+    public void visit(Term Term);
+    public void visit(Condition Condition);
+    public void visit(VarMulDeclList VarMulDeclList);
+    public void visit(ConstDeclList ConstDeclList);
+    public void visit(ActualParamList ActualParamList);
+    public void visit(VarDeclList VarDeclList);
+    public void visit(FormalParamList FormalParamList);
+    public void visit(Expr Expr);
+    public void visit(DesignatorStmtOptional DesignatorStmtOptional);
+    public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ActualPars ActualPars);
+    public void visit(Decl Decl);
+    public void visit(Statement Statement);
+    public void visit(VarDecl VarDecl);
+    public void visit(ConstDecl ConstDecl);
+    public void visit(CondFact CondFact);
+    public void visit(MethodDeclList MethodDeclList);
+    public void visit(FormPars FormPars);
     public void visit(ModOp ModOp);
     public void visit(DivOp DivOp);
     public void visit(Mulop Mulop);
@@ -53,7 +53,7 @@ public interface Visitor {
     public void visit(BoolConst BoolConst);
     public void visit(CharConst CharConst);
     public void visit(NumConst NumConst);
-    public void visit(FuncCall FuncCall);
+    public void visit(FuncCallFactor FuncCallFactor);
     public void visit(Var Var);
     public void visit(SingleTerm SingleTerm);
     public void visit(MulTerm MulTerm);
@@ -78,8 +78,9 @@ public interface Visitor {
     public void visit(OneDesignatorStmt OneDesignatorStmt);
     public void visit(Decrement Decrement);
     public void visit(Increment Increment);
-    public void visit(FunctionCall FunctionCall);
+    public void visit(FunctionCallStmt FunctionCallStmt);
     public void visit(Assignment Assignment);
+    public void visit(ForT ForT);
     public void visit(ErrorStmt ErrorStmt);
     public void visit(BlockOfStmts BlockOfStmts);
     public void visit(PrintStmtArg PrintStmtArg);
@@ -102,6 +103,8 @@ public interface Visitor {
     public void visit(FormalParamDecls FormalParamDecls);
     public void visit(NoFormParam NoFormParam);
     public void visit(FormParams FormParams);
+    public void visit(MethodVoidName MethodVoidName);
+    public void visit(MethodTypeName MethodTypeName);
     public void visit(VoidMethodDecl VoidMethodDecl);
     public void visit(TypeMethodDecl TypeMethodDecl);
     public void visit(NoMethodDecl NoMethodDecl);
@@ -123,6 +126,7 @@ public interface Visitor {
     public void visit(OneVarDeclListEnded OneVarDeclListEnded);
     public void visit(NoDecl NoDecl);
     public void visit(AllDeclarationsList AllDeclarationsList);
+    public void visit(ProgramName ProgramName);
     public void visit(Program Program);
 
 }

@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DifferentOp extends Relop {
 
-    public DifferentOp () {
+    private String DiffString;
+
+    public DifferentOp (String DiffString) {
+        this.DiffString=DiffString;
+    }
+
+    public String getDiffString() {
+        return DiffString;
+    }
+
+    public void setDiffString(String DiffString) {
+        this.DiffString=DiffString;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class DifferentOp extends Relop {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("DifferentOp(\n");
+
+        buffer.append(" "+tab+DiffString);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [DifferentOp]");

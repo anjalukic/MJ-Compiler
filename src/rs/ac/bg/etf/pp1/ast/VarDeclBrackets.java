@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:58
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VarDeclBrackets extends VarDecl {
 
-    private String I1;
+    private String varName;
 
-    public VarDeclBrackets (String I1) {
-        this.I1=I1;
+    public VarDeclBrackets (String varName) {
+        this.varName=varName;
     }
 
-    public String getI1() {
-        return I1;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class VarDeclBrackets extends VarDecl {
         buffer.append(tab);
         buffer.append("VarDeclBrackets(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+varName);
         buffer.append("\n");
 
         buffer.append(tab);

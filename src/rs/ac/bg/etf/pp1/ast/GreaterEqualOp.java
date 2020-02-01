@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class GreaterEqualOp extends Relop {
 
-    public GreaterEqualOp () {
+    private String GteString;
+
+    public GreaterEqualOp (String GteString) {
+        this.GteString=GteString;
+    }
+
+    public String getGteString() {
+        return GteString;
+    }
+
+    public void setGteString(String GteString) {
+        this.GteString=GteString;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class GreaterEqualOp extends Relop {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("GreaterEqualOp(\n");
+
+        buffer.append(" "+tab+GteString);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [GreaterEqualOp]");

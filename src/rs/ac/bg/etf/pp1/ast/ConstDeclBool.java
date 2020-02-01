@@ -1,34 +1,34 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:58
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstDeclBool extends ConstDecl {
 
-    private String I1;
-    private String B2;
+    private String constName;
+    private String B1;
 
-    public ConstDeclBool (String I1, String B2) {
-        this.I1=I1;
-        this.B2=B2;
+    public ConstDeclBool (String constName, String B1) {
+        this.constName=constName;
+        this.B1=B1;
     }
 
-    public String getI1() {
-        return I1;
+    public String getConstName() {
+        return constName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setConstName(String constName) {
+        this.constName=constName;
     }
 
-    public String getB2() {
-        return B2;
+    public String getB1() {
+        return B1;
     }
 
-    public void setB2(String B2) {
-        this.B2=B2;
+    public void setB1(String B1) {
+        this.B1=B1;
     }
 
     public void accept(Visitor visitor) {
@@ -51,10 +51,10 @@ public class ConstDeclBool extends ConstDecl {
         buffer.append(tab);
         buffer.append("ConstDeclBool(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+constName);
         buffer.append("\n");
 
-        buffer.append(" "+tab+B2);
+        buffer.append(" "+tab+B1);
         buffer.append("\n");
 
         buffer.append(tab);

@@ -1,34 +1,34 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:58
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstDeclChar extends ConstDecl {
 
-    private String I1;
-    private Character C2;
+    private String constName;
+    private Character C1;
 
-    public ConstDeclChar (String I1, Character C2) {
-        this.I1=I1;
-        this.C2=C2;
+    public ConstDeclChar (String constName, Character C1) {
+        this.constName=constName;
+        this.C1=C1;
     }
 
-    public String getI1() {
-        return I1;
+    public String getConstName() {
+        return constName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setConstName(String constName) {
+        this.constName=constName;
     }
 
-    public Character getC2() {
-        return C2;
+    public Character getC1() {
+        return C1;
     }
 
-    public void setC2(Character C2) {
-        this.C2=C2;
+    public void setC1(Character C1) {
+        this.C1=C1;
     }
 
     public void accept(Visitor visitor) {
@@ -51,10 +51,10 @@ public class ConstDeclChar extends ConstDecl {
         buffer.append(tab);
         buffer.append("ConstDeclChar(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+constName);
         buffer.append("\n");
 
-        buffer.append(" "+tab+C2);
+        buffer.append(" "+tab+C1);
         buffer.append("\n");
 
         buffer.append(tab);

@@ -1,178 +1,344 @@
-INFO  13:52:21,308 - Compiling source file: C:\Users\anjal\Desktop\Desktop\Fakultet\pp\pp1lab.templateAST - Copy\workspace\MJCompiler\test\program.mj
-INFO  13:52:21,342 - #2 program
-INFO  13:52:21,343 - #21 MJProgram
-INFO  13:52:21,343 - #21 int
-INFO  13:52:21,343 - #21 x
-INFO  13:52:21,344 - #41 .
-ERROR 13:52:21,344 - 
-Sintaksna greska na liniji 2
-INFO  13:52:21,344 - #15 ,
-INFO  13:52:21,344 - #41 .
-INFO  13:52:21,344 - #21 s
-INFO  13:52:21,344 - #5 ;
-INFO  13:52:21,344 - #21 int
-INFO  13:52:21,344 - #21 y
-INFO  13:52:21,345 - #5 ;
-ERROR 13:52:21,345 - Izvrsen oporavak do ; ili , u liniji 2
-INFO  13:52:21,345 - #3 {
-INFO  13:52:21,346 - #21 int
-INFO  13:52:21,346 - #21 k
-INFO  13:52:21,346 - #9 (
-INFO  13:52:21,346 - #21 char
-INFO  13:52:21,352 - #41 .
-ERROR 13:52:21,352 - 
-Sintaksna greska na liniji 5
-INFO  13:52:21,353 - #21 g
-INFO  13:52:21,353 - #15 ,
-INFO  13:52:21,353 - #21 bool
-INFO  13:52:21,353 - #21 a
-INFO  13:52:21,353 - #10 )
-ERROR 13:52:21,353 - Izvrsen oporavak do , ili ) u liniji 5
-INFO  13:52:21,354 - #21 int
-INFO  13:52:21,354 - #21 c
-INFO  13:52:21,354 - #5 ;
-INFO  13:52:21,354 - #3 {
-INFO  13:52:21,355 - #21 c
-INFO  13:52:21,355 - #24 =
-INFO  13:52:21,355 - #18 1
-INFO  13:52:21,355 - #5 ;
-INFO  13:52:21,356 - #12 return
-INFO  13:52:21,356 - #21 c
-INFO  13:52:21,356 - #13 +
-INFO  13:52:21,356 - #18 2
-INFO  13:52:21,356 - #5 ;
-INFO  13:52:21,357 - #4 }
-INFO  13:52:21,357 - #21 int
-INFO  13:52:21,357 - #21 main
-INFO  13:52:21,358 - #9 (
-INFO  13:52:21,358 - #21 int
-INFO  13:52:21,358 - #41 .
-ERROR 13:52:21,358 - 
-Sintaksna greska na liniji 10
-INFO  13:52:21,358 - #21 k
-INFO  13:52:21,358 - #15 ,
-INFO  13:52:21,358 - #21 char
-INFO  13:52:21,358 - #41 .
-INFO  13:52:21,358 - #21 b
-INFO  13:52:21,358 - #15 ,
-INFO  13:52:21,358 - #21 int
-INFO  13:52:21,358 - #21 abv
-INFO  13:52:21,358 - #10 )
-ERROR 13:52:21,358 - Izvrsen oporavak do , ili ) u liniji 10
-INFO  13:52:21,358 - #3 {
-INFO  13:52:21,358 - #42 for
-INFO  13:52:21,358 - #9 (
-INFO  13:52:21,359 - #21 i
-INFO  13:52:21,359 - #24 =
-INFO  13:52:21,359 - #18 0
-INFO  13:52:21,359 - #5 ;
-INFO  13:52:21,359 - #21 i
-INFO  13:52:21,359 - #35 <
-INFO  13:52:21,359 - #18 3
-INFO  13:52:21,360 - #5 ;
-INFO  13:52:21,360 - #21 i
-INFO  13:52:21,360 - #28 ++
-INFO  13:52:21,360 - #10 )
-INFO  13:52:21,361 - #3 {
-INFO  13:52:21,361 - #22 if
-INFO  13:52:21,361 - #9 (
-INFO  13:52:21,361 - #21 i
-INFO  13:52:21,361 - #35 <
-INFO  13:52:21,361 - #18 2
-INFO  13:52:21,361 - #10 )
-INFO  13:52:21,361 - #21 a
-INFO  13:52:21,361 - #28 ++
-INFO  13:52:21,361 - #5 ;
-INFO  13:52:21,361 - #4 }
-INFO  13:52:21,361 - #21 a
-INFO  13:52:21,361 - #24 =
-INFO  13:52:21,361 - #41 .
-ERROR 13:52:21,361 - 
-Sintaksna greska na liniji 20
-INFO  13:52:21,361 - #18 1
-INFO  13:52:21,362 - #5 ;
-INFO  13:52:21,362 - #22 if
-INFO  13:52:21,362 - #9 (
-INFO  13:52:21,362 - #21 a
-ERROR 13:52:21,362 - Izvrsen oporavak do ; u liniji 20
-INFO  13:52:21,362 - #34 >
-INFO  13:52:21,362 - #18 3
-INFO  13:52:21,363 - #10 )
-INFO  13:52:21,363 - #21 a
-INFO  13:52:21,363 - #28 ++
-INFO  13:52:21,363 - #5 ;
-INFO  13:52:21,363 - #23 else
-INFO  13:52:21,363 - #21 a
-INFO  13:52:21,363 - #29 --
-INFO  13:52:21,363 - #5 ;
-INFO  13:52:21,363 - #22 if
-INFO  13:52:21,363 - #9 (
-INFO  13:52:21,363 - #21 a
-INFO  13:52:21,363 - #34 >
-INFO  13:52:21,363 - #18 2
-INFO  13:52:21,363 - #10 )
-INFO  13:52:21,363 - #22 if
-INFO  13:52:21,364 - #9 (
-INFO  13:52:21,364 - #21 a
-INFO  13:52:21,364 - #35 <
-INFO  13:52:21,364 - #18 3
-INFO  13:52:21,364 - #10 )
-INFO  13:52:21,364 - #21 a
-INFO  13:52:21,364 - #28 ++
-INFO  13:52:21,364 - #5 ;
-INFO  13:52:21,364 - #23 else
-INFO  13:52:21,364 - #21 a
-INFO  13:52:21,364 - #29 --
-INFO  13:52:21,364 - #5 ;
-INFO  13:52:21,364 - #4 }
-INFO  13:52:21,364 - #4 }
-INFO  13:52:21,366 - Program(
- MJProgram
+INFO  00:55:29,540 - Compiling source file: C:\Users\anjal\Desktop\Desktop\Fakultet\pp\projekat radna\workspace\MJCompiler\test\program.mj
+INFO  00:55:29,574 - #2 program
+INFO  00:55:29,574 - #20 MJProgram
+INFO  00:55:29,574 - #20 int
+INFO  00:55:29,575 - #20 a
+INFO  00:55:29,576 - #14 ,
+INFO  00:55:29,576 - #20 b
+INFO  00:55:29,576 - #5 ;
+INFO  00:55:29,576 - #6 const
+INFO  00:55:29,577 - #20 int
+INFO  00:55:29,577 - #20 d
+INFO  00:55:29,577 - #29 =
+INFO  00:55:29,577 - #17 3
+INFO  00:55:29,577 - #5 ;
+INFO  00:55:29,577 - #20 int
+INFO  00:55:29,578 - #20 niz
+INFO  00:55:29,578 - #7 [
+INFO  00:55:29,578 - #8 ]
+INFO  00:55:29,578 - #5 ;
+INFO  00:55:29,578 - #3 {
+INFO  00:55:29,578 - #20 int
+INFO  00:55:29,579 - #20 leng
+INFO  00:55:29,580 - #9 (
+INFO  00:55:29,580 - #20 int
+INFO  00:55:29,580 - #20 a
+INFO  00:55:29,580 - #7 [
+INFO  00:55:29,580 - #8 ]
+INFO  00:55:29,580 - #10 )
+INFO  00:55:29,581 - #3 {
+INFO  00:55:29,581 - #11 return
+INFO  00:55:29,582 - #17 3
+INFO  00:55:29,582 - #5 ;
+INFO  00:55:29,582 - #4 }
+INFO  00:55:29,583 - #20 int
+INFO  00:55:29,583 - #20 k
+INFO  00:55:29,583 - #9 (
+INFO  00:55:29,583 - #20 int
+INFO  00:55:29,583 - #20 i
+INFO  00:55:29,583 - #14 ,
+INFO  00:55:29,583 - #20 char
+INFO  00:55:29,583 - #20 j
+INFO  00:55:29,583 - #10 )
+INFO  00:55:29,584 - #20 int
+INFO  00:55:29,584 - #20 c
+INFO  00:55:29,584 - #5 ;
+INFO  00:55:29,584 - #3 {
+INFO  00:55:29,584 - #20 c
+INFO  00:55:29,584 - #29 =
+INFO  00:55:29,584 - #17 1
+INFO  00:55:29,584 - #5 ;
+INFO  00:55:29,585 - #11 return
+INFO  00:55:29,585 - #20 c
+INFO  00:55:29,585 - #12 +
+INFO  00:55:29,585 - #17 2
+INFO  00:55:29,586 - #5 ;
+INFO  00:55:29,586 - #4 }
+INFO  00:55:29,586 - #16 void
+INFO  00:55:29,586 - #20 main
+INFO  00:55:29,586 - #9 (
+INFO  00:55:29,586 - #10 )
+INFO  00:55:29,587 - #20 int
+INFO  00:55:29,587 - #20 i
+INFO  00:55:29,587 - #5 ;
+INFO  00:55:29,587 - #20 int
+INFO  00:55:29,587 - #20 a
+INFO  00:55:29,587 - #5 ;
+INFO  00:55:29,587 - #20 char
+INFO  00:55:29,587 - #20 x
+INFO  00:55:29,588 - #5 ;
+INFO  00:55:29,588 - #20 bool
+INFO  00:55:29,588 - #20 y
+INFO  00:55:29,588 - #5 ;
+INFO  00:55:29,588 - #3 {
+INFO  00:55:29,588 - #42 for
+INFO  00:55:29,588 - #9 (
+INFO  00:55:29,588 - #20 i
+INFO  00:55:29,588 - #29 =
+INFO  00:55:29,589 - #17 0
+INFO  00:55:29,589 - #5 ;
+INFO  00:55:29,589 - #20 x
+INFO  00:55:29,589 - #21 ==
+INFO  00:55:29,589 - #18 a
+INFO  00:55:29,589 - #5 ;
+INFO  00:55:29,590 - #20 i
+INFO  00:55:29,590 - #33 ++
+INFO  00:55:29,590 - #10 )
+INFO  00:55:29,590 - #3 {
+INFO  00:55:29,590 - #27 if
+INFO  00:55:29,590 - #9 (
+INFO  00:55:29,590 - #20 i
+INFO  00:55:29,590 - #24 <
+INFO  00:55:29,590 - #17 2
+INFO  00:55:29,590 - #10 )
+INFO  00:55:29,590 - #20 a
+INFO  00:55:29,591 - #33 ++
+INFO  00:55:29,591 - #5 ;
+INFO  00:55:29,591 - #30 break
+INFO  00:55:29,591 - #5 ;
+INFO  00:55:29,591 - #31 continue
+INFO  00:55:29,592 - #5 ;
+INFO  00:55:29,592 - #42 for
+INFO  00:55:29,592 - #9 (
+INFO  00:55:29,592 - #5 ;
+INFO  00:55:29,593 - #5 ;
+INFO  00:55:29,594 - #10 )
+INFO  00:55:29,594 - #3 {
+INFO  00:55:29,594 - #30 break
+INFO  00:55:29,594 - #5 ;
+INFO  00:55:29,594 - #4 }
+INFO  00:55:29,594 - #4 }
+INFO  00:55:29,595 - #20 a
+INFO  00:55:29,595 - #29 =
+INFO  00:55:29,595 - #17 1
+INFO  00:55:29,595 - #5 ;
+INFO  00:55:29,596 - #27 if
+INFO  00:55:29,596 - #9 (
+INFO  00:55:29,596 - #20 a
+INFO  00:55:29,596 - #23 >
+INFO  00:55:29,596 - #17 3
+INFO  00:55:29,596 - #10 )
+INFO  00:55:29,597 - #20 a
+INFO  00:55:29,597 - #33 ++
+INFO  00:55:29,597 - #5 ;
+INFO  00:55:29,597 - #28 else
+INFO  00:55:29,597 - #20 a
+INFO  00:55:29,597 - #34 --
+INFO  00:55:29,597 - #5 ;
+INFO  00:55:29,598 - #27 if
+INFO  00:55:29,598 - #9 (
+INFO  00:55:29,598 - #20 a
+INFO  00:55:29,598 - #23 >
+INFO  00:55:29,598 - #17 2
+INFO  00:55:29,599 - #10 )
+INFO  00:55:29,603 - #27 if
+INFO  00:55:29,603 - #9 (
+INFO  00:55:29,603 - #20 a
+INFO  00:55:29,603 - #24 <
+INFO  00:55:29,603 - #17 3
+INFO  00:55:29,603 - #10 )
+INFO  00:55:29,603 - #20 a
+INFO  00:55:29,603 - #33 ++
+INFO  00:55:29,603 - #5 ;
+INFO  00:55:29,603 - #28 else
+INFO  00:55:29,603 - #20 a
+INFO  00:55:29,604 - #29 =
+INFO  00:55:29,604 - #20 k
+INFO  00:55:29,604 - #9 (
+INFO  00:55:29,604 - #20 k
+INFO  00:55:29,604 - #9 (
+INFO  00:55:29,604 - #20 len
+INFO  00:55:29,604 - #9 (
+INFO  00:55:29,604 - #20 niz
+INFO  00:55:29,604 - #10 )
+INFO  00:55:29,604 - #14 ,
+INFO  00:55:29,604 - #18 b
+INFO  00:55:29,604 - #10 )
+INFO  00:55:29,604 - #14 ,
+INFO  00:55:29,605 - #18 b
+INFO  00:55:29,605 - #10 )
+INFO  00:55:29,605 - #38 *
+INFO  00:55:29,605 - #20 d
+INFO  00:55:29,605 - #38 *
+INFO  00:55:29,605 - #17 3
+INFO  00:55:29,605 - #39 /
+INFO  00:55:29,606 - #9 (
+INFO  00:55:29,606 - #20 b
+INFO  00:55:29,606 - #12 +
+INFO  00:55:29,606 - #17 1
+INFO  00:55:29,606 - #10 )
+INFO  00:55:29,606 - #5 ;
+INFO  00:55:29,606 - #20 k
+INFO  00:55:29,606 - #9 (
+INFO  00:55:29,607 - #20 k
+INFO  00:55:29,607 - #9 (
+INFO  00:55:29,607 - #17 2
+INFO  00:55:29,607 - #14 ,
+INFO  00:55:29,607 - #18 d
+INFO  00:55:29,607 - #10 )
+INFO  00:55:29,607 - #14 ,
+INFO  00:55:29,607 - #18 z
+INFO  00:55:29,607 - #10 )
+INFO  00:55:29,607 - #5 ;
+INFO  00:55:29,607 - #20 x
+INFO  00:55:29,607 - #29 =
+INFO  00:55:29,607 - #18 a
+INFO  00:55:29,607 - #5 ;
+INFO  00:55:29,607 - #20 y
+INFO  00:55:29,607 - #29 =
+INFO  00:55:29,607 - #19 false
+INFO  00:55:29,607 - #5 ;
+INFO  00:55:29,608 - #20 niz
+INFO  00:55:29,608 - #7 [
+INFO  00:55:29,608 - #17 3
+INFO  00:55:29,608 - #8 ]
+INFO  00:55:29,608 - #29 =
+INFO  00:55:29,608 - #20 len
+INFO  00:55:29,608 - #9 (
+INFO  00:55:29,608 - #20 niz
+INFO  00:55:29,608 - #10 )
+INFO  00:55:29,608 - #5 ;
+INFO  00:55:29,608 - #20 niz
+INFO  00:55:29,608 - #29 =
+INFO  00:55:29,608 - #37 new
+INFO  00:55:29,608 - #20 int
+INFO  00:55:29,608 - #7 [
+INFO  00:55:29,608 - #20 a
+INFO  00:55:29,608 - #8 ]
+INFO  00:55:29,608 - #5 ;
+INFO  00:55:29,609 - #20 b
+INFO  00:55:29,609 - #29 =
+INFO  00:55:29,609 - #20 niz
+INFO  00:55:29,609 - #7 [
+INFO  00:55:29,609 - #17 2
+INFO  00:55:29,609 - #8 ]
+INFO  00:55:29,609 - #5 ;
+INFO  00:55:29,609 - #20 len
+INFO  00:55:29,609 - #9 (
+INFO  00:55:29,609 - #20 niz
+INFO  00:55:29,609 - #10 )
+INFO  00:55:29,609 - #5 ;
+INFO  00:55:29,609 - #15 print
+INFO  00:55:29,609 - #9 (
+INFO  00:55:29,609 - #17 5
+INFO  00:55:29,609 - #10 )
+INFO  00:55:29,609 - #5 ;
+INFO  00:55:29,609 - #32 read
+INFO  00:55:29,609 - #9 (
+INFO  00:55:29,609 - #20 a
+INFO  00:55:29,609 - #10 )
+INFO  00:55:29,610 - #5 ;
+INFO  00:55:29,610 - #4 }
+INFO  00:55:29,610 - #4 }
+INFO  00:55:29,619 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
   AllDeclarationsList(
     AllDeclarationsList(
-      NoDecl(
-      ) [NoDecl]
-      OneVarDeclListEnded(
+      AllDeclarationsList(
+        NoDecl(
+        ) [NoDecl]
+        OneVarDeclListEnded(
+          Type(
+           int
+          ) [Type]
+          OneVarDeclList(
+            OneSingleVarDecl(
+              VarDeclSingle(
+               a
+              ) [VarDeclSingle]
+            ) [OneSingleVarDecl]
+            VarDeclSingle(
+             b
+            ) [VarDeclSingle]
+          ) [OneVarDeclList]
+        ) [OneVarDeclListEnded]
+      ) [AllDeclarationsList]
+      OneConstDeclListEnded(
         Type(
          int
         ) [Type]
-        OneSingleVarDecl(
-          ErrorVarDecl(
-          ) [ErrorVarDecl]
-        ) [OneSingleVarDecl]
-      ) [OneVarDeclListEnded]
+        OneSingleConstDecl(
+          ConstDeclNumber(
+           d
+           3
+          ) [ConstDeclNumber]
+        ) [OneSingleConstDecl]
+      ) [OneConstDeclListEnded]
     ) [AllDeclarationsList]
     OneVarDeclListEnded(
       Type(
        int
       ) [Type]
       OneSingleVarDecl(
-        VarDeclSingle(
-         y
-        ) [VarDeclSingle]
+        VarDeclBrackets(
+         niz
+        ) [VarDeclBrackets]
       ) [OneSingleVarDecl]
     ) [OneVarDeclListEnded]
   ) [AllDeclarationsList]
   MethodDeclarations(
     MethodDeclarations(
-      NoMethodDecl(
-      ) [NoMethodDecl]
+      MethodDeclarations(
+        NoMethodDecl(
+        ) [NoMethodDecl]
+        TypeMethodDecl(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           leng
+          ) [MethodTypeName]
+          FormParams(
+            SingleFormalParamDecl(
+              FormalParamDeclBrackets(
+                Type(
+                 int
+                ) [Type]
+               a
+              ) [FormalParamDeclBrackets]
+            ) [SingleFormalParamDecl]
+          ) [FormParams]
+          NoVarDecls(
+          ) [NoVarDecls]
+          Statements(
+            NoStmt(
+            ) [NoStmt]
+            ReturnExpr(
+              SingleExpr(
+                SingleTerm(
+                  NumConst(
+                   3
+                  ) [NumConst]
+                ) [SingleTerm]
+              ) [SingleExpr]
+            ) [ReturnExpr]
+          ) [Statements]
+        ) [TypeMethodDecl]
+      ) [MethodDeclarations]
       TypeMethodDecl(
-        Type(
-         int
-        ) [Type]
-       k
+        MethodTypeName(
+          Type(
+           int
+          ) [Type]
+         k
+        ) [MethodTypeName]
         FormParams(
           FormalParamDecls(
             SingleFormalParamDecl(
-              ErrorFormalPars(
-              ) [ErrorFormalPars]
+              FormalParamDeclNoBrackets(
+                Type(
+                 int
+                ) [Type]
+               i
+              ) [FormalParamDeclNoBrackets]
             ) [SingleFormalParamDecl]
             FormalParamDeclNoBrackets(
               Type(
-               bool
+               char
               ) [Type]
-             a
+             j
             ) [FormalParamDeclNoBrackets]
           ) [FormalParamDecls]
         ) [FormParams]
@@ -230,63 +396,506 @@ INFO  13:52:21,366 - Program(
         ) [Statements]
       ) [TypeMethodDecl]
     ) [MethodDeclarations]
-    TypeMethodDecl(
-      Type(
-       int
-      ) [Type]
-     main
-      FormParams(
-        FormalParamDecls(
-          SingleFormalParamDecl(
-            ErrorFormalPars(
-            ) [ErrorFormalPars]
-          ) [SingleFormalParamDecl]
-          FormalParamDeclNoBrackets(
+    VoidMethodDecl(
+      MethodVoidName(
+       main
+      ) [MethodVoidName]
+      NoFormParam(
+      ) [NoFormParam]
+      VarMultiDeclList(
+        VarMultiDeclList(
+          VarMultiDeclList(
+            VarMultiDeclList(
+              NoVarDecls(
+              ) [NoVarDecls]
+              Type(
+               int
+              ) [Type]
+              OneSingleVarDecl(
+                VarDeclSingle(
+                 i
+                ) [VarDeclSingle]
+              ) [OneSingleVarDecl]
+            ) [VarMultiDeclList]
             Type(
              int
             ) [Type]
-           abv
-          ) [FormalParamDeclNoBrackets]
-        ) [FormalParamDecls]
-      ) [FormParams]
-      NoVarDecls(
-      ) [NoVarDecls]
+            OneSingleVarDecl(
+              VarDeclSingle(
+               a
+              ) [VarDeclSingle]
+            ) [OneSingleVarDecl]
+          ) [VarMultiDeclList]
+          Type(
+           char
+          ) [Type]
+          OneSingleVarDecl(
+            VarDeclSingle(
+             x
+            ) [VarDeclSingle]
+          ) [OneSingleVarDecl]
+        ) [VarMultiDeclList]
+        Type(
+         bool
+        ) [Type]
+        OneSingleVarDecl(
+          VarDeclSingle(
+           y
+          ) [VarDeclSingle]
+        ) [OneSingleVarDecl]
+      ) [VarMultiDeclList]
       Statements(
         Statements(
           Statements(
             Statements(
-              NoStmt(
-              ) [NoStmt]
-              ForStatement(
-                OneDesignatorStmt(
-                  Assignment(
-                    SimpleDesignator(
-                     i
-                    ) [SimpleDesignator]
-                    SingleExpr(
-                      SingleTerm(
-                        NumConst(
-                         0
-                        ) [NumConst]
-                      ) [SingleTerm]
-                    ) [SingleExpr]
-                  ) [Assignment]
-                ) [OneDesignatorStmt]
-                OptionalCondition(
-                  SingleCondition(
-                    SingleCondTerm(
-                      RelCondFact(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              Statements(
+                                NoStmt(
+                                ) [NoStmt]
+                                ForStatement(
+                                  ForT(
+                                  ) [ForT]
+                                  OneDesignatorStmt(
+                                    Assignment(
+                                      SimpleDesignator(
+                                       i
+                                      ) [SimpleDesignator]
+                                      SingleExpr(
+                                        SingleTerm(
+                                          NumConst(
+                                           0
+                                          ) [NumConst]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                    ) [Assignment]
+                                  ) [OneDesignatorStmt]
+                                  OptionalCondition(
+                                    SingleCondition(
+                                      SingleCondTerm(
+                                        RelCondFact(
+                                          SingleExpr(
+                                            SingleTerm(
+                                              Var(
+                                                SimpleDesignator(
+                                                 x
+                                                ) [SimpleDesignator]
+                                              ) [Var]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                          EqualOp(
+                                           ==
+                                          ) [EqualOp]
+                                          SingleExpr(
+                                            SingleTerm(
+                                              CharConst(
+                                               a
+                                              ) [CharConst]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                        ) [RelCondFact]
+                                      ) [SingleCondTerm]
+                                    ) [SingleCondition]
+                                  ) [OptionalCondition]
+                                  OneDesignatorStmt(
+                                    Increment(
+                                      SimpleDesignator(
+                                       i
+                                      ) [SimpleDesignator]
+                                    ) [Increment]
+                                  ) [OneDesignatorStmt]
+                                  BlockOfStmts(
+                                    Statements(
+                                      Statements(
+                                        Statements(
+                                          Statements(
+                                            NoStmt(
+                                            ) [NoStmt]
+                                            UnmatchedStatement(
+                                              SingleCondition(
+                                                SingleCondTerm(
+                                                  RelCondFact(
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        Var(
+                                                          SimpleDesignator(
+                                                           i
+                                                          ) [SimpleDesignator]
+                                                        ) [Var]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                    LessOp(
+                                                     <
+                                                    ) [LessOp]
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        NumConst(
+                                                         2
+                                                        ) [NumConst]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                  ) [RelCondFact]
+                                                ) [SingleCondTerm]
+                                              ) [SingleCondition]
+                                              DesignatorStmt(
+                                                Increment(
+                                                  SimpleDesignator(
+                                                   a
+                                                  ) [SimpleDesignator]
+                                                ) [Increment]
+                                              ) [DesignatorStmt]
+                                            ) [UnmatchedStatement]
+                                          ) [Statements]
+                                          BreakStatement(
+                                          ) [BreakStatement]
+                                        ) [Statements]
+                                        ContinueStatement(
+                                        ) [ContinueStatement]
+                                      ) [Statements]
+                                      ForStatement(
+                                        ForT(
+                                        ) [ForT]
+                                        NoDesignatorStmt(
+                                        ) [NoDesignatorStmt]
+                                        NoCondition(
+                                        ) [NoCondition]
+                                        NoDesignatorStmt(
+                                        ) [NoDesignatorStmt]
+                                        BlockOfStmts(
+                                          Statements(
+                                            NoStmt(
+                                            ) [NoStmt]
+                                            BreakStatement(
+                                            ) [BreakStatement]
+                                          ) [Statements]
+                                        ) [BlockOfStmts]
+                                      ) [ForStatement]
+                                    ) [Statements]
+                                  ) [BlockOfStmts]
+                                ) [ForStatement]
+                              ) [Statements]
+                              DesignatorStmt(
+                                Assignment(
+                                  SimpleDesignator(
+                                   a
+                                  ) [SimpleDesignator]
+                                  SingleExpr(
+                                    SingleTerm(
+                                      NumConst(
+                                       1
+                                      ) [NumConst]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [Assignment]
+                              ) [DesignatorStmt]
+                            ) [Statements]
+                            MatchedStatement(
+                              SingleCondition(
+                                SingleCondTerm(
+                                  RelCondFact(
+                                    SingleExpr(
+                                      SingleTerm(
+                                        Var(
+                                          SimpleDesignator(
+                                           a
+                                          ) [SimpleDesignator]
+                                        ) [Var]
+                                      ) [SingleTerm]
+                                    ) [SingleExpr]
+                                    GreaterOp(
+                                     >
+                                    ) [GreaterOp]
+                                    SingleExpr(
+                                      SingleTerm(
+                                        NumConst(
+                                         3
+                                        ) [NumConst]
+                                      ) [SingleTerm]
+                                    ) [SingleExpr]
+                                  ) [RelCondFact]
+                                ) [SingleCondTerm]
+                              ) [SingleCondition]
+                              DesignatorStmt(
+                                Increment(
+                                  SimpleDesignator(
+                                   a
+                                  ) [SimpleDesignator]
+                                ) [Increment]
+                              ) [DesignatorStmt]
+                              DesignatorStmt(
+                                Decrement(
+                                  SimpleDesignator(
+                                   a
+                                  ) [SimpleDesignator]
+                                ) [Decrement]
+                              ) [DesignatorStmt]
+                            ) [MatchedStatement]
+                          ) [Statements]
+                          UnmatchedStatement(
+                            SingleCondition(
+                              SingleCondTerm(
+                                RelCondFact(
+                                  SingleExpr(
+                                    SingleTerm(
+                                      Var(
+                                        SimpleDesignator(
+                                         a
+                                        ) [SimpleDesignator]
+                                      ) [Var]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                  GreaterOp(
+                                   >
+                                  ) [GreaterOp]
+                                  SingleExpr(
+                                    SingleTerm(
+                                      NumConst(
+                                       2
+                                      ) [NumConst]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [RelCondFact]
+                              ) [SingleCondTerm]
+                            ) [SingleCondition]
+                            MatchedStatement(
+                              SingleCondition(
+                                SingleCondTerm(
+                                  RelCondFact(
+                                    SingleExpr(
+                                      SingleTerm(
+                                        Var(
+                                          SimpleDesignator(
+                                           a
+                                          ) [SimpleDesignator]
+                                        ) [Var]
+                                      ) [SingleTerm]
+                                    ) [SingleExpr]
+                                    LessOp(
+                                     <
+                                    ) [LessOp]
+                                    SingleExpr(
+                                      SingleTerm(
+                                        NumConst(
+                                         3
+                                        ) [NumConst]
+                                      ) [SingleTerm]
+                                    ) [SingleExpr]
+                                  ) [RelCondFact]
+                                ) [SingleCondTerm]
+                              ) [SingleCondition]
+                              DesignatorStmt(
+                                Increment(
+                                  SimpleDesignator(
+                                   a
+                                  ) [SimpleDesignator]
+                                ) [Increment]
+                              ) [DesignatorStmt]
+                              DesignatorStmt(
+                                Assignment(
+                                  SimpleDesignator(
+                                   a
+                                  ) [SimpleDesignator]
+                                  SingleExpr(
+                                    MulTerm(
+                                      MulTerm(
+                                        MulTerm(
+                                          SingleTerm(
+                                            FuncCallFactor(
+                                              SimpleDesignator(
+                                               k
+                                              ) [SimpleDesignator]
+                                              Actuals(
+                                                ActualParams(
+                                                  ActualParam(
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        FuncCallFactor(
+                                                          SimpleDesignator(
+                                                           k
+                                                          ) [SimpleDesignator]
+                                                          Actuals(
+                                                            ActualParams(
+                                                              ActualParam(
+                                                                SingleExpr(
+                                                                  SingleTerm(
+                                                                    FuncCallFactor(
+                                                                      SimpleDesignator(
+                                                                       len
+                                                                      ) [SimpleDesignator]
+                                                                      Actuals(
+                                                                        ActualParam(
+                                                                          SingleExpr(
+                                                                            SingleTerm(
+                                                                              Var(
+                                                                                SimpleDesignator(
+                                                                                 niz
+                                                                                ) [SimpleDesignator]
+                                                                              ) [Var]
+                                                                            ) [SingleTerm]
+                                                                          ) [SingleExpr]
+                                                                        ) [ActualParam]
+                                                                      ) [Actuals]
+                                                                    ) [FuncCallFactor]
+                                                                  ) [SingleTerm]
+                                                                ) [SingleExpr]
+                                                              ) [ActualParam]
+                                                              SingleExpr(
+                                                                SingleTerm(
+                                                                  CharConst(
+                                                                   b
+                                                                  ) [CharConst]
+                                                                ) [SingleTerm]
+                                                              ) [SingleExpr]
+                                                            ) [ActualParams]
+                                                          ) [Actuals]
+                                                        ) [FuncCallFactor]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                  ) [ActualParam]
+                                                  SingleExpr(
+                                                    SingleTerm(
+                                                      CharConst(
+                                                       b
+                                                      ) [CharConst]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpr]
+                                                ) [ActualParams]
+                                              ) [Actuals]
+                                            ) [FuncCallFactor]
+                                          ) [SingleTerm]
+                                          Mulop(
+                                          ) [Mulop]
+                                          Var(
+                                            SimpleDesignator(
+                                             d
+                                            ) [SimpleDesignator]
+                                          ) [Var]
+                                        ) [MulTerm]
+                                        Mulop(
+                                        ) [Mulop]
+                                        NumConst(
+                                         3
+                                        ) [NumConst]
+                                      ) [MulTerm]
+                                      DivOp(
+                                      ) [DivOp]
+                                      NestedExpr(
+                                        AddExpr(
+                                          SingleExpr(
+                                            SingleTerm(
+                                              Var(
+                                                SimpleDesignator(
+                                                 b
+                                                ) [SimpleDesignator]
+                                              ) [Var]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                          Addop(
+                                          ) [Addop]
+                                          SingleTerm(
+                                            NumConst(
+                                             1
+                                            ) [NumConst]
+                                          ) [SingleTerm]
+                                        ) [AddExpr]
+                                      ) [NestedExpr]
+                                    ) [MulTerm]
+                                  ) [SingleExpr]
+                                ) [Assignment]
+                              ) [DesignatorStmt]
+                            ) [MatchedStatement]
+                          ) [UnmatchedStatement]
+                        ) [Statements]
+                        DesignatorStmt(
+                          FunctionCallStmt(
+                            SimpleDesignator(
+                             k
+                            ) [SimpleDesignator]
+                            Actuals(
+                              ActualParams(
+                                ActualParam(
+                                  SingleExpr(
+                                    SingleTerm(
+                                      FuncCallFactor(
+                                        SimpleDesignator(
+                                         k
+                                        ) [SimpleDesignator]
+                                        Actuals(
+                                          ActualParams(
+                                            ActualParam(
+                                              SingleExpr(
+                                                SingleTerm(
+                                                  NumConst(
+                                                   2
+                                                  ) [NumConst]
+                                                ) [SingleTerm]
+                                              ) [SingleExpr]
+                                            ) [ActualParam]
+                                            SingleExpr(
+                                              SingleTerm(
+                                                CharConst(
+                                                 d
+                                                ) [CharConst]
+                                              ) [SingleTerm]
+                                            ) [SingleExpr]
+                                          ) [ActualParams]
+                                        ) [Actuals]
+                                      ) [FuncCallFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [ActualParam]
+                                SingleExpr(
+                                  SingleTerm(
+                                    CharConst(
+                                     z
+                                    ) [CharConst]
+                                  ) [SingleTerm]
+                                ) [SingleExpr]
+                              ) [ActualParams]
+                            ) [Actuals]
+                          ) [FunctionCallStmt]
+                        ) [DesignatorStmt]
+                      ) [Statements]
+                      DesignatorStmt(
+                        Assignment(
+                          SimpleDesignator(
+                           x
+                          ) [SimpleDesignator]
+                          SingleExpr(
+                            SingleTerm(
+                              CharConst(
+                               a
+                              ) [CharConst]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [Assignment]
+                      ) [DesignatorStmt]
+                    ) [Statements]
+                    DesignatorStmt(
+                      Assignment(
+                        SimpleDesignator(
+                         y
+                        ) [SimpleDesignator]
                         SingleExpr(
                           SingleTerm(
-                            Var(
-                              SimpleDesignator(
-                               i
-                              ) [SimpleDesignator]
-                            ) [Var]
+                            BoolConst(
+                             false
+                            ) [BoolConst]
                           ) [SingleTerm]
                         ) [SingleExpr]
-                        LessOp(
-                        ) [LessOp]
+                      ) [Assignment]
+                    ) [DesignatorStmt]
+                  ) [Statements]
+                  DesignatorStmt(
+                    Assignment(
+                      DesignatorArray(
+                       niz
                         SingleExpr(
                           SingleTerm(
                             NumConst(
@@ -294,177 +903,206 @@ INFO  13:52:21,366 - Program(
                             ) [NumConst]
                           ) [SingleTerm]
                         ) [SingleExpr]
-                      ) [RelCondFact]
-                    ) [SingleCondTerm]
-                  ) [SingleCondition]
-                ) [OptionalCondition]
-                OneDesignatorStmt(
-                  Increment(
+                      ) [DesignatorArray]
+                      SingleExpr(
+                        SingleTerm(
+                          FuncCallFactor(
+                            SimpleDesignator(
+                             len
+                            ) [SimpleDesignator]
+                            Actuals(
+                              ActualParam(
+                                SingleExpr(
+                                  SingleTerm(
+                                    Var(
+                                      SimpleDesignator(
+                                       niz
+                                      ) [SimpleDesignator]
+                                    ) [Var]
+                                  ) [SingleTerm]
+                                ) [SingleExpr]
+                              ) [ActualParam]
+                            ) [Actuals]
+                          ) [FuncCallFactor]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                    ) [Assignment]
+                  ) [DesignatorStmt]
+                ) [Statements]
+                DesignatorStmt(
+                  Assignment(
                     SimpleDesignator(
-                     i
+                     niz
                     ) [SimpleDesignator]
-                  ) [Increment]
-                ) [OneDesignatorStmt]
-                BlockOfStmts(
-                  Statements(
-                    NoStmt(
-                    ) [NoStmt]
-                    UnmatchedStatement(
-                      SingleCondition(
-                        SingleCondTerm(
-                          RelCondFact(
-                            SingleExpr(
-                              SingleTerm(
-                                Var(
-                                  SimpleDesignator(
-                                   i
-                                  ) [SimpleDesignator]
-                                ) [Var]
-                              ) [SingleTerm]
-                            ) [SingleExpr]
-                            LessOp(
-                            ) [LessOp]
-                            SingleExpr(
-                              SingleTerm(
-                                NumConst(
-                                 2
-                                ) [NumConst]
-                              ) [SingleTerm]
-                            ) [SingleExpr]
-                          ) [RelCondFact]
-                        ) [SingleCondTerm]
-                      ) [SingleCondition]
-                      DesignatorStmt(
-                        Increment(
-                          SimpleDesignator(
-                           a
-                          ) [SimpleDesignator]
-                        ) [Increment]
-                      ) [DesignatorStmt]
-                    ) [UnmatchedStatement]
-                  ) [Statements]
-                ) [BlockOfStmts]
-              ) [ForStatement]
+                    SingleExpr(
+                      SingleTerm(
+                        NewArray(
+                          Type(
+                           int
+                          ) [Type]
+                          SingleExpr(
+                            SingleTerm(
+                              Var(
+                                SimpleDesignator(
+                                 a
+                                ) [SimpleDesignator]
+                              ) [Var]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [NewArray]
+                      ) [SingleTerm]
+                    ) [SingleExpr]
+                  ) [Assignment]
+                ) [DesignatorStmt]
+              ) [Statements]
+              DesignatorStmt(
+                Assignment(
+                  SimpleDesignator(
+                   b
+                  ) [SimpleDesignator]
+                  SingleExpr(
+                    SingleTerm(
+                      Var(
+                        DesignatorArray(
+                         niz
+                          SingleExpr(
+                            SingleTerm(
+                              NumConst(
+                               2
+                              ) [NumConst]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [DesignatorArray]
+                      ) [Var]
+                    ) [SingleTerm]
+                  ) [SingleExpr]
+                ) [Assignment]
+              ) [DesignatorStmt]
             ) [Statements]
-            ErrorStmt(
-            ) [ErrorStmt]
+            DesignatorStmt(
+              FunctionCallStmt(
+                SimpleDesignator(
+                 len
+                ) [SimpleDesignator]
+                Actuals(
+                  ActualParam(
+                    SingleExpr(
+                      SingleTerm(
+                        Var(
+                          SimpleDesignator(
+                           niz
+                          ) [SimpleDesignator]
+                        ) [Var]
+                      ) [SingleTerm]
+                    ) [SingleExpr]
+                  ) [ActualParam]
+                ) [Actuals]
+              ) [FunctionCallStmt]
+            ) [DesignatorStmt]
           ) [Statements]
-          MatchedStatement(
-            SingleCondition(
-              SingleCondTerm(
-                RelCondFact(
-                  SingleExpr(
-                    SingleTerm(
-                      Var(
-                        SimpleDesignator(
-                         a
-                        ) [SimpleDesignator]
-                      ) [Var]
-                    ) [SingleTerm]
-                  ) [SingleExpr]
-                  GreaterOp(
-                  ) [GreaterOp]
-                  SingleExpr(
-                    SingleTerm(
-                      NumConst(
-                       3
-                      ) [NumConst]
-                    ) [SingleTerm]
-                  ) [SingleExpr]
-                ) [RelCondFact]
-              ) [SingleCondTerm]
-            ) [SingleCondition]
-            DesignatorStmt(
-              Increment(
-                SimpleDesignator(
-                 a
-                ) [SimpleDesignator]
-              ) [Increment]
-            ) [DesignatorStmt]
-            DesignatorStmt(
-              Decrement(
-                SimpleDesignator(
-                 a
-                ) [SimpleDesignator]
-              ) [Decrement]
-            ) [DesignatorStmt]
-          ) [MatchedStatement]
+          PrintStmt(
+            SingleExpr(
+              SingleTerm(
+                NumConst(
+                 5
+                ) [NumConst]
+              ) [SingleTerm]
+            ) [SingleExpr]
+          ) [PrintStmt]
         ) [Statements]
-        UnmatchedStatement(
-          SingleCondition(
-            SingleCondTerm(
-              RelCondFact(
-                SingleExpr(
-                  SingleTerm(
-                    Var(
-                      SimpleDesignator(
-                       a
-                      ) [SimpleDesignator]
-                    ) [Var]
-                  ) [SingleTerm]
-                ) [SingleExpr]
-                GreaterOp(
-                ) [GreaterOp]
-                SingleExpr(
-                  SingleTerm(
-                    NumConst(
-                     2
-                    ) [NumConst]
-                  ) [SingleTerm]
-                ) [SingleExpr]
-              ) [RelCondFact]
-            ) [SingleCondTerm]
-          ) [SingleCondition]
-          MatchedStatement(
-            SingleCondition(
-              SingleCondTerm(
-                RelCondFact(
-                  SingleExpr(
-                    SingleTerm(
-                      Var(
-                        SimpleDesignator(
-                         a
-                        ) [SimpleDesignator]
-                      ) [Var]
-                    ) [SingleTerm]
-                  ) [SingleExpr]
-                  LessOp(
-                  ) [LessOp]
-                  SingleExpr(
-                    SingleTerm(
-                      NumConst(
-                       3
-                      ) [NumConst]
-                    ) [SingleTerm]
-                  ) [SingleExpr]
-                ) [RelCondFact]
-              ) [SingleCondTerm]
-            ) [SingleCondition]
-            DesignatorStmt(
-              Increment(
-                SimpleDesignator(
-                 a
-                ) [SimpleDesignator]
-              ) [Increment]
-            ) [DesignatorStmt]
-            DesignatorStmt(
-              Decrement(
-                SimpleDesignator(
-                 a
-                ) [SimpleDesignator]
-              ) [Decrement]
-            ) [DesignatorStmt]
-          ) [MatchedStatement]
-        ) [UnmatchedStatement]
+        ReadStmt(
+          SimpleDesignator(
+           a
+          ) [SimpleDesignator]
+        ) [ReadStmt]
       ) [Statements]
-    ) [TypeMethodDecl]
+    ) [VoidMethodDecl]
   ) [MethodDeclarations]
 ) [Program]
-INFO  13:52:21,367 - ===================================
-INFO  13:52:21,370 -  Print count calls = 0
-INFO  13:52:21,370 -  Deklarisanih promenljivih ima = 2
-INFO  13:52:21,370 -  ExprCount = 1
-INFO  13:52:21,370 -  FormParsCount = 2
-INFO  13:52:21,370 -  matched ifs count = 2
-INFO  13:52:21,370 -  unmatched ifs count = 2
-INFO  13:52:21,370 -  for count = 1
+INFO  00:55:29,621 - ===================================
+INFO  00:55:29,623 - Deklarisana promenljiva a na liniji 2
+INFO  00:55:29,623 - Deklarisana promenljiva b na liniji 2
+INFO  00:55:29,623 - Deklarisana konstanta d na liniji 3
+INFO  00:55:29,623 - Deklarisana niz-promenljiva niz na liniji 4
+INFO  00:55:29,623 - Obradjuje se funkcija leng na liniji 7
+INFO  00:55:29,623 - Deklarisan formalni parametar-niz a na liniji 7
+INFO  00:55:29,624 - Obradjuje se funkcija k na liniji 10
+INFO  00:55:29,624 - Deklarisan formalni parametar i na liniji 10
+INFO  00:55:29,624 - Deklarisan formalni parametar j na liniji 10
+INFO  00:55:29,624 - Deklarisana promenljiva c na liniji 10
+INFO  00:55:29,624 - Pronadjena upotreba promenljive c na liniji 11
+INFO  00:55:29,624 - Pronadjena upotreba promenljive c na liniji 12
+INFO  00:55:29,624 - Obradjuje se funkcija main na liniji 15
+INFO  00:55:29,624 - Deklarisana promenljiva i na liniji 15
+INFO  00:55:29,624 - Deklarisana promenljiva a na liniji 15
+INFO  00:55:29,624 - Deklarisana promenljiva x na liniji 15
+INFO  00:55:29,624 - Deklarisana promenljiva y na liniji 15
+INFO  00:55:29,624 - Pocela for petlja 
+INFO  00:55:29,624 - Pronadjena upotreba promenljive i na liniji 16
+INFO  00:55:29,625 - Pronadjena upotreba promenljive x na liniji 16
+INFO  00:55:29,625 - Pronadjena upotreba promenljive i na liniji 16
+INFO  00:55:29,625 - Pronadjena upotreba promenljive i na liniji 17
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 17
+INFO  00:55:29,625 - Pocela for petlja 
+INFO  00:55:29,625 - Zavrsila for petlja  na liniji 20
+INFO  00:55:29,625 - Zavrsila for petlja  na liniji 16
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 25
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 26
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 26
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 26
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 27
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 28
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 28
+INFO  00:55:29,625 - Pronadjena upotreba promenljive a na liniji 29
+INFO  00:55:29,625 - Pronadjena upotreba promenljive niz na liniji 29
+INFO  00:55:29,626 - Argument ubacen na stek  na liniji 29
+INFO  00:55:29,626 - Pronadjen poziv funkcije len na liniji 29
+INFO  00:55:29,626 - Poklapaju se tipovi argumenta i parametra len na liniji 29
+INFO  00:55:29,626 - Unutrasnji poziv sa 0 argumenata na steku len na liniji 29
+INFO  00:55:29,626 - Argument ubacen na stek  na liniji 29
+INFO  00:55:29,626 - Argument ubacen na stek  na liniji 29
+INFO  00:55:29,626 - Pronadjen poziv funkcije k na liniji 29
+INFO  00:55:29,672 - Poklapaju se tipovi argumenta i parametra k na liniji 29
+INFO  00:55:29,672 - Poklapaju se tipovi argumenta i parametra k na liniji 29
+INFO  00:55:29,672 - Unutrasnji poziv sa 0 argumenata na steku k na liniji 29
+INFO  00:55:29,672 - Argument ubacen na stek  na liniji 29
+INFO  00:55:29,672 - Argument ubacen na stek  na liniji 29
+INFO  00:55:29,672 - Pronadjen poziv funkcije k na liniji 29
+INFO  00:55:29,672 - Poklapaju se tipovi argumenta i parametra k na liniji 29
+INFO  00:55:29,672 - Poklapaju se tipovi argumenta i parametra k na liniji 29
+INFO  00:55:29,672 - Poslednji poziv obradjen k na liniji 29
+INFO  00:55:29,672 - Pronadjena upotreba konstante d na liniji 29
+INFO  00:55:29,672 - Pronadjena upotreba promenljive b na liniji 29
+INFO  00:55:29,672 - Argument ubacen na stek  na liniji 30
+INFO  00:55:29,672 - Argument ubacen na stek  na liniji 30
+INFO  00:55:29,673 - Pronadjen poziv funkcije k na liniji 30
+INFO  00:55:29,673 - Poklapaju se tipovi argumenta i parametra k na liniji 30
+INFO  00:55:29,673 - Poklapaju se tipovi argumenta i parametra k na liniji 30
+INFO  00:55:29,673 - Unutrasnji poziv sa 0 argumenata na steku k na liniji 30
+INFO  00:55:29,673 - Argument ubacen na stek  na liniji 30
+INFO  00:55:29,673 - Argument ubacen na stek  na liniji 30
+INFO  00:55:29,673 - Pronadjen poziv funkcije k na liniji 30
+INFO  00:55:29,673 - Poklapaju se tipovi argumenta i parametra k na liniji 30
+INFO  00:55:29,673 - Poklapaju se tipovi argumenta i parametra k na liniji 30
+INFO  00:55:29,673 - Naredba poziva funkcije k obradjena na liniji 30
+INFO  00:55:29,673 - Pronadjena upotreba promenljive x na liniji 31
+INFO  00:55:29,673 - Pronadjena upotreba promenljive y na liniji 32
+INFO  00:55:29,673 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 33
+INFO  00:55:29,673 - Pronadjena upotreba promenljive niz na liniji 33
+INFO  00:55:29,673 - Argument ubacen na stek  na liniji 33
+INFO  00:55:29,673 - Pronadjen poziv funkcije len na liniji 33
+INFO  00:55:29,673 - Poklapaju se tipovi argumenta i parametra len na liniji 33
+INFO  00:55:29,673 - Poslednji poziv obradjen len na liniji 33
+INFO  00:55:29,673 - Pronadjena upotreba promenljive niz na liniji 34
+INFO  00:55:29,674 - Pronadjena upotreba promenljive a na liniji 34
+INFO  00:55:29,674 - Pronadjena alokacija niza na liniji 34
+INFO  00:55:29,674 - Pronadjena upotreba promenljive b na liniji 35
+INFO  00:55:29,674 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 35
+INFO  00:55:29,674 - Pronadjena upotreba promenljive niz na liniji 36
+INFO  00:55:29,674 - Argument ubacen na stek  na liniji 36
+INFO  00:55:29,674 - Pronadjen poziv funkcije len na liniji 36
+INFO  00:55:29,674 - Poklapaju se tipovi argumenta i parametra len na liniji 36
+INFO  00:55:29,674 - Naredba poziva funkcije len obradjena na liniji 36
+INFO  00:55:29,674 - Pronadjena upotreba promenljive a na liniji 38
+INFO  00:55:29,674 - ===================================
+INFO  00:55:29,674 - Parsiranje uspesno zavrseno!

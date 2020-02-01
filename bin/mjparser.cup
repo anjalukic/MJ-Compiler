@@ -1,5 +1,4 @@
 
-
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
@@ -8,6 +7,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +28,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +38,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -44,21 +49,27 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, SEMI, CONST, LBRACKET, RBRACKET, LPAREN, RPAREN, EQUAL, RETURN, PLUS, MINUS, COMMA, PRINT, VOID;
+terminal PROG, LBRACE, RBRACE, SEMI, CONST, LBRACKET, RBRACKET, LPAREN, RPAREN, RETURN, PLUS, MINUS, COMMA, PRINT, VOID;
 terminal Integer NUMCONST;
 terminal Character CHARCONST;
 terminal String BOOLCONST;
 terminal String IDENT;
-terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, DIFF, GT, LT, GTE, LTE, MUL, DIV, MOD, DOT, FOR;
+terminal String EQUAL, DIFF, GT, LT, GTE, LTE;
+terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, MUL, DIV, MOD, DOT, FOR;
 
-nonterminal Program, DeclList, Decl, VarDeclList, VarDecl, ConstDeclList, ConstDecl, VarMulDeclList, Type, MethodDeclList, MethodDecl;
+nonterminal DeclList, Decl, VarDecl, VarDeclList, ConstDeclList, ConstDecl, VarMulDeclList, MethodDeclList, MethodDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Designator, Expr, Term, Addop, Factor, ActualPars, ActualParamList, Relop;
-nonterminal DesignatorStatement, Condition, CondTerm, CondFact, Mulop, NegTerm, DesignatorStmtOptional, ConditionOptional;
+nonterminal Addop, ActualPars, Relop, ForT;
+nonterminal DesignatorStatement, Condition, CondTerm, CondFact, Mulop, DesignatorStmtOptional, ConditionOptional;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program, MethodTypeName, MethodVoidName, Designator, ActualParamList;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Factor, Term, Expr, NegTerm;
 
 precedence left ELSE;
 
-Program ::= (Program) PROG IDENT DeclList LBRACE MethodDeclList RBRACE;
+Program ::= (Program) PROG ProgramName:p DeclList LBRACE MethodDeclList RBRACE;
+
+ProgramName ::= (ProgramName) IDENT:programName;
 
 DeclList ::= (AllDeclarationsList) DeclList Decl
 			|
@@ -75,9 +86,9 @@ VarDeclList ::= (OneVarDeclList) VarDeclList COMMA VarDecl
 				(OneSingleVarDecl) VarDecl
 				;
 		
-VarDecl ::= (VarDeclSingle) IDENT
+VarDecl ::= (VarDeclSingle) IDENT:varName
 			|
-			(VarDeclBrackets) IDENT LBRACKET RBRACKET
+			(VarDeclBrackets) IDENT:varName LBRACKET RBRACKET
 			|
 		    (ErrorVarDecl) error:l
 		   {: parser.report_error("Izvrsen oporavak do ; ili , u liniji " + lleft, null);  :}
@@ -88,11 +99,11 @@ ConstDeclList ::= (OneConstDeclList) ConstDeclList COMMA ConstDecl
 				(OneSingleConstDecl) ConstDecl
 				;
 
-ConstDecl ::= (ConstDeclNumber) IDENT ASSIGN NUMCONST
+ConstDecl ::= (ConstDeclNumber) IDENT:constName ASSIGN NUMCONST
 			|
-			(ConstDeclBool) IDENT ASSIGN BOOLCONST
+			(ConstDeclBool) IDENT:constName ASSIGN BOOLCONST
 			|
-			(ConstDeclChar) IDENT ASSIGN CHARCONST
+			(ConstDeclChar) IDENT:constName ASSIGN CHARCONST
 			;
 			
 VarMulDeclList ::= (VarMultiDeclList) VarMulDeclList Type VarDeclList SEMI
@@ -107,10 +118,14 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 				(NoMethodDecl) /* epsilon */
 				;
 				
-MethodDecl ::= (TypeMethodDecl) Type:retType IDENT:methName LPAREN FormPars RPAREN VarMulDeclList LBRACE StatementList RBRACE
+MethodDecl ::= (TypeMethodDecl) MethodTypeName LPAREN FormPars RPAREN VarMulDeclList LBRACE StatementList RBRACE
 			|
-			(VoidMethodDecl) VOID IDENT:methName LPAREN FormPars RPAREN VarMulDeclList LBRACE StatementList RBRACE
+			(VoidMethodDecl) MethodVoidName LPAREN FormPars RPAREN VarMulDeclList LBRACE StatementList RBRACE
 			;
+			
+MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName;
+
+MethodVoidName ::= (MethodVoidName) VOID IDENT:methName;
 
 FormPars ::= (FormParams) FormalParamList
 		  |
@@ -122,9 +137,9 @@ FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 				(SingleFormalParamDecl) FormalParamDecl
 				;
 				
-FormalParamDecl ::= (FormalParamDeclNoBrackets) Type IDENT
+FormalParamDecl ::= (FormalParamDeclNoBrackets) Type IDENT:VarName
 				|
-				(FormalParamDeclBrackets) Type IDENT LBRACKET RBRACKET
+				(FormalParamDeclBrackets) Type IDENT:VarName LBRACKET RBRACKET
 				|
 				(ErrorFormalPars) error:l
 		   		{: parser.report_error("Izvrsen oporavak do , ili ) u liniji " + lleft, null);  :}
@@ -179,7 +194,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 		   	|
 		   	(UnmatchedStatement) IF LPAREN Condition RPAREN Statement
 		   	|
-		   	(ForStatement) FOR LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Statement
+		   	(ForStatement) ForT LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Statement
 		   	|
 		   	(BreakStatement) BREAK SEMI
 		   	|
@@ -201,9 +216,11 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
 		   ;
 		   
+ForT ::= (ForT) FOR;
+		   
 DesignatorStatement ::= (Assignment) Designator ASSIGN Expr
 					|
-					(FunctionCall) Designator LPAREN ActualPars RPAREN
+					(FunctionCallStmt) Designator LPAREN ActualPars RPAREN
 					|
 					(Increment) Designator INCR
 					|
@@ -261,7 +278,7 @@ Term ::= (MulTerm) Term Mulop Factor
 
 Factor ::= (Var) Designator:d
 		| 
-		(FuncCall) Designator:func LPAREN ActualPars RPAREN
+		(FuncCallFactor) Designator:func LPAREN ActualPars RPAREN
 		|
 		(NumConst) NUMCONST
 		|
@@ -269,24 +286,24 @@ Factor ::= (Var) Designator:d
 		|
 		(BoolConst) BOOLCONST
 		|
-		(NewType) NEW Type
+		(NewType) NEW Type:typeName
 		|
-		(NewArray) NEW Type LBRACKET Expr RBRACKET
+		(NewArray) NEW Type:typeName LBRACKET Expr RBRACKET
 		|
-		(NestedExpr) LPAREN Expr RPAREN
+		(NestedExpr) LPAREN Expr:type RPAREN
 		;
 					
-Designator ::= (SimpleDesignator) IDENT
+Designator ::= (SimpleDesignator) IDENT:DesignatorName
 			|
-			(DesignatorArray) IDENT LBRACKET Expr RBRACKET
+			(DesignatorArray) IDENT:DesignatorName LBRACKET Expr:Index RBRACKET
 			;
 
-Relop ::= (EqualOp) EQUAL
-		| (DifferentOp) DIFF
-		| (GreaterOp) GT
-		| (GreaterEqualOp) GTE
-		| (LessOp) LT
-		| (LessEqualOp) LTE
+Relop ::= (EqualOp) EQUAL:EqualString
+		| (DifferentOp) DIFF:DiffString
+		| (GreaterOp) GT:GtString
+		| (GreaterEqualOp) GTE:GteString
+		| (LessOp) LT:LtString
+		| (LessEqualOp) LTE:LteString
 		;
 
 Addop ::= (Addop) PLUS

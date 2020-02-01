@@ -1,19 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:58
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VoidMethodDecl extends MethodDecl {
 
-    private String methName;
+    private MethodVoidName MethodVoidName;
     private FormPars FormPars;
     private VarMulDeclList VarMulDeclList;
     private StatementList StatementList;
 
-    public VoidMethodDecl (String methName, FormPars FormPars, VarMulDeclList VarMulDeclList, StatementList StatementList) {
-        this.methName=methName;
+    public VoidMethodDecl (MethodVoidName MethodVoidName, FormPars FormPars, VarMulDeclList VarMulDeclList, StatementList StatementList) {
+        this.MethodVoidName=MethodVoidName;
+        if(MethodVoidName!=null) MethodVoidName.setParent(this);
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.VarMulDeclList=VarMulDeclList;
@@ -22,12 +23,12 @@ public class VoidMethodDecl extends MethodDecl {
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public String getMethName() {
-        return methName;
+    public MethodVoidName getMethodVoidName() {
+        return MethodVoidName;
     }
 
-    public void setMethName(String methName) {
-        this.methName=methName;
+    public void setMethodVoidName(MethodVoidName MethodVoidName) {
+        this.MethodVoidName=MethodVoidName;
     }
 
     public FormPars getFormPars() {
@@ -59,6 +60,7 @@ public class VoidMethodDecl extends MethodDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(MethodVoidName!=null) MethodVoidName.accept(visitor);
         if(FormPars!=null) FormPars.accept(visitor);
         if(VarMulDeclList!=null) VarMulDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
@@ -66,12 +68,14 @@ public class VoidMethodDecl extends MethodDecl {
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(MethodVoidName!=null) MethodVoidName.traverseTopDown(visitor);
         if(FormPars!=null) FormPars.traverseTopDown(visitor);
         if(VarMulDeclList!=null) VarMulDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(MethodVoidName!=null) MethodVoidName.traverseBottomUp(visitor);
         if(FormPars!=null) FormPars.traverseBottomUp(visitor);
         if(VarMulDeclList!=null) VarMulDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
@@ -83,7 +87,10 @@ public class VoidMethodDecl extends MethodDecl {
         buffer.append(tab);
         buffer.append("VoidMethodDecl(\n");
 
-        buffer.append(" "+tab+methName);
+        if(MethodVoidName!=null)
+            buffer.append(MethodVoidName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(FormPars!=null)

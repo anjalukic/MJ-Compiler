@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/0/2020 13:46:59
+// 28/0/2020 0:55:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class LessOp extends Relop {
 
-    public LessOp () {
+    private String LtString;
+
+    public LessOp (String LtString) {
+        this.LtString=LtString;
+    }
+
+    public String getLtString() {
+        return LtString;
+    }
+
+    public void setLtString(String LtString) {
+        this.LtString=LtString;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class LessOp extends Relop {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("LessOp(\n");
+
+        buffer.append(" "+tab+LtString);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [LessOp]");
