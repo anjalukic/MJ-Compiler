@@ -59,7 +59,7 @@ terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, MUL,
 
 nonterminal DeclList, Decl, VarDecl, VarDeclList, ConstDeclList, ConstDecl, VarMulDeclList, MethodDeclList, MethodDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Addop, ActualPars, Relop, ForT;
+nonterminal Addop, ActualPars, Relop, ForT, IfT, ElseT, RParenT;
 nonterminal DesignatorStatement, Condition, CondTerm, CondFact, Mulop, DesignatorStmtOptional, ConditionOptional;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program, MethodTypeName, MethodVoidName, Designator, ActualParamList;
@@ -149,50 +149,12 @@ StatementList ::= (Statements) StatementList Statement
 				|
 				(NoStmt) /* epsilon */
 				;
-/*Statement ::= (MatchedStmt) Matched
-		   |
-		   (UnmatchedStmt) Unmatched
-		   ; 
-
-Unmatched ::= (UnmatchedIf) IF LPAREN Condition RPAREN Statement
-		 	|
-		 	(UnmatchedIfElse) IF LPAREN Condition RPAREN Matched ELSE Unmatched
-		 	|
-		 	(ForStatement1) FOR LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Unmatched
-		 	;
-		 
-
-Matched ::= (DesignatorStmt) DesignatorStatement SEMI
-			|
-		   (MatchedStatement) IF LPAREN Condition RPAREN Matched ELSE Matched
-		   	|
-		   	(ForStatement) FOR LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Matched
-		   	|
-		   	(BreakStatement) BREAK SEMI
-		   	|
-		   	(ContinueStatement) CONTINUE SEMI
-			|
-		   (ReturnExpr) RETURN Expr:t SEMI
-			|
-		   (ReturnNoExpr) RETURN SEMI
-			|
-			(ReadStmt) READ LPAREN Designator RPAREN SEMI
-			|
-		   (PrintStmt) PRINT LPAREN Expr RPAREN SEMI
-		   |
-		   (PrintStmtArg) PRINT LPAREN Expr COMMA NUMCONST RPAREN SEMI
-		   |
-		   (BlockOfStmts) LBRACE StatementList RBRACE
-		   |
-		    (ErrorStmt) error SEMI:l
-		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
-		   ;
-		   */			
+			
 Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 			|
-		   (MatchedStatement) IF LPAREN Condition RPAREN Statement ELSE Statement
+		   (MatchedStatement) IfT LPAREN Condition RParenT Statement ElseT Statement
 		   	|
-		   	(UnmatchedStatement) IF LPAREN Condition RPAREN Statement
+		   	(UnmatchedStatement) IfT LPAREN Condition RParenT Statement
 		   	|
 		   	(ForStatement) ForT LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Statement
 		   	|
@@ -215,8 +177,14 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 		    (ErrorStmt) error SEMI:l
 		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
 		   ;
+	
+IfT ::= (IfT) IF;
+		   
+ElseT ::= (ElseT) ELSE;
 		   
 ForT ::= (ForT) FOR;
+
+RParenT ::= (RParenT) RPAREN;
 		   
 DesignatorStatement ::= (Assignment) Designator ASSIGN Expr
 					|

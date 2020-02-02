@@ -1,6 +1,9 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.Stack;
+
 import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
+import rs.ac.bg.etf.pp1.CounterVisitor.OrChecker;
 import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
@@ -11,6 +14,13 @@ import rs.etf.pp1.symboltable.concepts.Struct;
 public class CodeGenerator extends VisitorAdaptor {
 
 	private int mainPc;
+	
+	private Stack<Integer> endIfAddresses = new Stack<Integer>();
+	private Stack<Integer> endIfAddressesPopCount = new Stack<Integer>();
+	private Stack<Integer> startIfAddresses = new Stack<Integer>();
+	private Stack<Integer> elseAddresses = new Stack<Integer>();
+	private boolean orExists;
+	private int notLastOrCounter = 0;
 	
 	public int getMainPc() {
 		return mainPc;
@@ -216,21 +226,146 @@ public class CodeGenerator extends VisitorAdaptor {
 		else 
 			Code.put(1);//element size = 1 word
 	}
-	
+	/*
+	 //CONSTANT INIT
 	public void visit(ConstDeclNumber cnstDecl) {
-		//Obj obj = TabExt.find(cnstDecl.getConstName());
-		//obj.setAdr(cnstDecl.getN1());
+		Obj obj = TabExt.find(cnstDecl.getConstName());
+		obj.setAdr(cnstDecl.getN1());
 	}
 	
 	public void visit(ConstDeclBool cnstDecl) {
-		//int boolVal = cnstDecl.getB1().equals("true")?1:0;
-		//Obj obj = TabExt.find(cnstDecl.getConstName());
-		//obj.setAdr(boolVal);
+		int boolVal = cnstDecl.getB1().equals("true")?1:0;
+		Obj obj = TabExt.find(cnstDecl.getConstName());
+		obj.setAdr(boolVal);
 	}
 	
 	public void visit(ConstDeclChar cnstDecl) {
-		//Obj obj = TabExt.find(cnstDecl.getConstName());
-		//obj.setAdr(cnstDecl.getC1());
+		Obj obj = TabExt.find(cnstDecl.getConstName());
+		obj.setAdr(cnstDecl.getC1());
+	}
+	*/
+	
+	private int getRelopKind(Relop relop) {
+		if (relop instanceof EqualOp) {
+			return Code.eq;
+		} else if (relop instanceof DifferentOp){
+			return Code.ne;
+		} else if (relop instanceof GreaterOp){
+			return Code.gt;
+		}else if (relop instanceof GreaterEqualOp){
+			return Code.ge;
+		}else if (relop instanceof LessOp){
+			return Code.lt;
+		}else {//LessEqualOp
+			return Code.le;
+		}
+	}
+	
+	public void visit(IfT ift) {
+		endIfAddressesPopCount.push(0);
+		OrChecker orCnt = new OrChecker();
+		if (ift.getParent() instanceof MatchedStatement) {
+			((MatchedStatement)(ift.getParent())).getCondition().traverseTopDown(orCnt);
+		}else {
+			((UnmatchedStatement)(ift.getParent())).getCondition().traverseTopDown(orCnt);
+		}
+		orExists = orCnt.orExists();
+	}
+	
+	public void visit(RParenT rp) {
+		for (int i=0; i<notLastOrCounter;i++) {
+			int patchAdr = startIfAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+		notLastOrCounter = 0;
+	}
+	
+	public void visit(SingleCondTerm sct) {
+		if (!orExists || sct.getParent().getParent() instanceof MatchedStatement ||
+				sct.getParent().getParent() instanceof UnmatchedStatement){//if not part of OR or if last in OR
+			if (sct.getCondFact() instanceof RelCondFact) {//if relop
+				RelCondFact temp = (RelCondFact) sct.getCondFact();
+				Code.putFalseJump(getRelopKind(temp.getRelop()),0);
+				endIfAddresses.push(Code.pc-2);
+				endIfAddressesPopCount.push(endIfAddressesPopCount.pop()+1);
+			} else {//if boolean
+				Obj temp = new Obj(Obj.Con, "$true", TabExt.boolType, 1, 0);
+				Code.load(temp);
+				Code.putFalseJump(Code.eq, 0);
+				endIfAddresses.push(Code.pc-2);
+				endIfAddressesPopCount.push(endIfAddressesPopCount.pop()+1);
+			}
+		}else {//in OR but not last
+			if (sct.getCondFact() instanceof RelCondFact) {//if relop
+				RelCondFact temp = (RelCondFact) sct.getCondFact();
+				Code.putFalseJump(Code.inverse[getRelopKind(temp.getRelop())],0);
+				startIfAddresses.push(Code.pc-2);
+				notLastOrCounter++;
+			} else {//if boolean
+				Obj temp = new Obj(Obj.Con, "$true", TabExt.boolType, 1, 0);
+				Code.load(temp);
+				Code.putFalseJump(Code.inverse[Code.eq], 0);
+				startIfAddresses.push(Code.pc-2);
+				notLastOrCounter++;
+				
+			}
+		}
+		
+	}
+	
+	public void visit(MultipleConditionsAND sct) {
+		if (!orExists || sct.getParent().getParent() instanceof MatchedStatement ||
+				sct.getParent().getParent() instanceof UnmatchedStatement){//if not part of OR or if last in OR
+			if (sct.getCondFact() instanceof RelCondFact) {//if relop
+				RelCondFact temp = (RelCondFact) sct.getCondFact();
+				Code.putFalseJump(getRelopKind(temp.getRelop()),0);
+				endIfAddresses.push(Code.pc-2);
+				endIfAddressesPopCount.push(endIfAddressesPopCount.pop()+1);
+			} else {//if boolean
+				Obj temp = new Obj(Obj.Con, "$true", TabExt.boolType, 1, 0);
+				Code.load(temp);
+				Code.putFalseJump(Code.eq, 0);
+				endIfAddresses.push(Code.pc-2);
+				endIfAddressesPopCount.push(endIfAddressesPopCount.pop()+1);
+			}
+		}else {//in OR but not last
+			if (sct.getCondFact() instanceof RelCondFact) {//if relop
+				RelCondFact temp = (RelCondFact) sct.getCondFact();
+				Code.putFalseJump(Code.inverse[getRelopKind(temp.getRelop())],0);
+				startIfAddresses.push(Code.pc-2);
+				notLastOrCounter++;
+			} else {//if boolean
+				Obj temp = new Obj(Obj.Con, "$true", TabExt.boolType, 1, 0);
+				Code.load(temp);
+				Code.putFalseJump(Code.inverse[Code.eq], 0);
+				startIfAddresses.push(Code.pc-2);
+				notLastOrCounter++;
+			}
+		}
+	}
+	
+	public void visit(UnmatchedStatement unIf) {
+		int border = endIfAddressesPopCount.pop();
+		for (int i=0; i<border; i++) {
+			int patchAdr = endIfAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+	}
+	
+	public void visit(ElseT mIf) {
+		Code.putJump(0);
+		elseAddresses.push(Code.pc-2);
+		
+		int border = endIfAddressesPopCount.pop();
+		for (int i=0; i<border; i++) {
+			int patchAdr = endIfAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+	}
+	
+	public void visit(MatchedStatement ms) {
+		int patchAdr = elseAddresses.pop();
+		Code.fixup(patchAdr);
 	}
 	
 }

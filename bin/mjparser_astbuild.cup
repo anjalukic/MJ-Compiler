@@ -75,6 +75,9 @@ nonterminal Addop Addop;
 nonterminal ActualPars ActualPars;
 nonterminal Relop Relop;
 nonterminal ForT ForT;
+nonterminal IfT IfT;
+nonterminal ElseT ElseT;
+nonterminal RParenT RParenT;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
@@ -170,50 +173,12 @@ StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new State
 				|
 				(NoStmt) {: RESULT=new NoStmt(); :} /* epsilon */
 				;
-/*Statement ::= (MatchedStmt) Matched
-		   |
-		   (UnmatchedStmt) Unmatched
-		   ; 
-
-Unmatched ::= (UnmatchedIf) IF LPAREN Condition RPAREN Statement
-		 	|
-		 	(UnmatchedIfElse) IF LPAREN Condition RPAREN Matched ELSE Unmatched
-		 	|
-		 	(ForStatement1) FOR LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Unmatched
-		 	;
-		 
-
-Matched ::= (DesignatorStmt) DesignatorStatement SEMI
-			|
-		   (MatchedStatement) IF LPAREN Condition RPAREN Matched ELSE Matched
-		   	|
-		   	(ForStatement) FOR LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Matched
-		   	|
-		   	(BreakStatement) BREAK SEMI
-		   	|
-		   	(ContinueStatement) CONTINUE SEMI
-			|
-		   (ReturnExpr) RETURN Expr:t SEMI
-			|
-		   (ReturnNoExpr) RETURN SEMI
-			|
-			(ReadStmt) READ LPAREN Designator RPAREN SEMI
-			|
-		   (PrintStmt) PRINT LPAREN Expr RPAREN SEMI
-		   |
-		   (PrintStmtArg) PRINT LPAREN Expr COMMA NUMCONST RPAREN SEMI
-		   |
-		   (BlockOfStmts) LBRACE StatementList RBRACE
-		   |
-		    (ErrorStmt) error SEMI:l
-		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
-		   ;
-		   */			
+			
 Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 			|
-		   (MatchedStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new MatchedStatement(C1, S2, S3); RESULT.setLine(C1left); :}
+		   (MatchedStatement) IfT:I1 LPAREN Condition:C2 RParenT:R3 Statement:S4 ElseT:E5 Statement:S6 {: RESULT=new MatchedStatement(I1, C2, R3, S4, E5, S6); RESULT.setLine(I1left); :}
 		   	|
-		   	(UnmatchedStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new UnmatchedStatement(C1, S2); RESULT.setLine(C1left); :}
+		   	(UnmatchedStatement) IfT:I1 LPAREN Condition:C2 RParenT:R3 Statement:S4 {: RESULT=new UnmatchedStatement(I1, C2, R3, S4); RESULT.setLine(I1left); :}
 		   	|
 		   	(ForStatement) ForT:F1 LPAREN DesignatorStmtOptional:D2 SEMI ConditionOptional:C3 SEMI DesignatorStmtOptional:D4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, D2, C3, D4, S5); RESULT.setLine(F1left); :}
 		   	|
@@ -236,8 +201,14 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 		    (ErrorStmt) error SEMI:l
 		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :} {: RESULT=new ErrorStmt(); :}
 		   ;
+	
+IfT ::= (IfT) IF {: RESULT=new IfT(); :};
+		   
+ElseT ::= (ElseT) ELSE {: RESULT=new ElseT(); :};
 		   
 ForT ::= (ForT) FOR {: RESULT=new ForT(); :};
+
+RParenT ::= (RParenT) RPAREN {: RESULT=new RParenT(); :};
 		   
 DesignatorStatement ::= (Assignment) Designator:D1 ASSIGN Expr:E2 {: RESULT=new Assignment(D1, E2); RESULT.setLine(D1left); :}
 					|
