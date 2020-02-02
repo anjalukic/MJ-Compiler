@@ -19,6 +19,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<Integer> endIfAddressesPopCount = new Stack<Integer>();
 	private Stack<Integer> startIfAddresses = new Stack<Integer>();
 	private Stack<Integer> elseAddresses = new Stack<Integer>();
+	//private Stack<Integer> startForAddresses = new Stack<Integer>();
+	private int startForAddress;
+	private Stack<Integer> endForAddresses = new Stack<Integer>();
+	//private Stack<Integer> skipIncrAddresses = new Stack<Integer>();		
+	private int skipIncrAddress;
+	private Stack<Integer> incrAddressesToFillEndWith = new Stack<Integer>();
+	private Stack<Integer> breakAddresses = new Stack<Integer>();
+	private Stack<Integer> breakCount = new Stack<Integer>();
 	private boolean orExists;
 	private int notLastOrCounter = 0;
 	
@@ -122,22 +130,40 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(Increment assignment) {
+		if (assignment.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+			Code.load(assignment.getDesignator().obj);
+		}
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(assignment.getDesignator().obj);
+		/*
 		Code.put(Code.inc);
 		Code.put(assignment.getDesignator().obj.getAdr());
 		Code.put(1);
+		*/
 	}
 	
 	public void visit(Decrement assignment) {
+		if (assignment.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+			Code.load(assignment.getDesignator().obj);
+		}
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(assignment.getDesignator().obj);
+		/*
 		Code.put(Code.inc);
 		Code.put(assignment.getDesignator().obj.getAdr());
 		Code.put(-1);
+		*/
 	}
 	
 	public void visit(SimpleDesignator designator) {
 		SyntaxNode parent = designator.getParent();
 		if (Assignment.class != parent.getClass() && FuncCallFactor.class != parent.getClass()
-				&& FunctionCallStmt.class != parent.getClass() && Increment.class != parent.getClass()
-				&& Decrement.class != parent.getClass()) {
+				&& FunctionCallStmt.class != parent.getClass()
+			&& ReadStmt.class!=parent.getClass()) {
 			Code.load(designator.obj);
 		}
 	}
@@ -145,8 +171,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorArray designator) {
 		SyntaxNode parent = designator.getParent();
 		if (Assignment.class != parent.getClass() && FuncCallFactor.class != parent.getClass()
-				&& FunctionCallStmt.class != parent.getClass() && Increment.class != parent.getClass()
-				&& Decrement.class != parent.getClass()) {
+				&& FunctionCallStmt.class != parent.getClass()
+			&& Increment.class != parent.getClass() && Decrement.class != parent.getClass()
+			&& ReadStmt.class!=parent.getClass()) {
 			Code.load(designator.obj);
 		}	
 		
@@ -282,7 +309,8 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(SingleCondTerm sct) {
 		if (!orExists || sct.getParent().getParent() instanceof MatchedStatement ||
-				sct.getParent().getParent() instanceof UnmatchedStatement){//if not part of OR or if last in OR
+				sct.getParent().getParent() instanceof UnmatchedStatement || 
+				sct.getParent().getParent() instanceof OptionalCondition){//if not part of OR or if last in OR
 			if (sct.getCondFact() instanceof RelCondFact) {//if relop
 				RelCondFact temp = (RelCondFact) sct.getCondFact();
 				Code.putFalseJump(getRelopKind(temp.getRelop()),0);
@@ -315,7 +343,8 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(MultipleConditionsAND sct) {
 		if (!orExists || sct.getParent().getParent() instanceof MatchedStatement ||
-				sct.getParent().getParent() instanceof UnmatchedStatement){//if not part of OR or if last in OR
+				sct.getParent().getParent() instanceof UnmatchedStatement || 
+				sct.getParent().getParent() instanceof OptionalCondition){//if not part of OR or if last in OR
 			if (sct.getCondFact() instanceof RelCondFact) {//if relop
 				RelCondFact temp = (RelCondFact) sct.getCondFact();
 				Code.putFalseJump(getRelopKind(temp.getRelop()),0);
@@ -367,5 +396,68 @@ public class CodeGenerator extends VisitorAdaptor {
 		int patchAdr = elseAddresses.pop();
 		Code.fixup(patchAdr);
 	}
+	
+	public void visit(SemiT s) {
+		//startForAddresses.push(Code.pc);
+		startForAddress = Code.pc;
+		endIfAddressesPopCount.push(0);
+		OrChecker orCnt = new OrChecker();
+		SyntaxNode parent = s.getParent();
+		if (((ForStatement)parent).getConditionOptional() instanceof OptionalCondition) {
+			((OptionalCondition)((ForStatement)parent).getConditionOptional()).getCondition().traverseTopDown(orCnt);
+			orExists = orCnt.orExists();
+		}
+	}
+	
+	public void visit(SemiTT s) {
+		Code.putJump(0);
+		skipIncrAddress = Code.pc-2;
+		incrAddressesToFillEndWith.push(Code.pc);
+		
+	}
+	
+	public void visit(RParenTT rp) {
+		//if not first loop jump to condition after increment
+		Code.putJump(startForAddress);
+		//patch skipping increment
+		Code.fixup(skipIncrAddress);
+		//patch conditions if there's OR
+		for (int i=0; i<notLastOrCounter;i++) {
+			int patchAdr = startIfAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+		notLastOrCounter = 0;
+	}
+	
+	public void visit(ForStatement fs) {
+		//jump to increment in for loop
+		Code.putJump(incrAddressesToFillEndWith.pop());
+		//fix condition exits
+		int border = endIfAddressesPopCount.pop();
+		for (int i=0; i<border; i++) {
+			int patchAdr = endIfAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+		border = breakCount.pop();
+		for (int i=0; i<border; i++) {
+			int patchAdr =breakAddresses.pop();
+			Code.fixup(patchAdr);
+		}
+	}
+	
+	public void visit(ContinueStatement cs) {
+		Code.putJump(incrAddressesToFillEndWith.peek());
+	}
+	
+	public void visit(BreakStatement cs) {
+		Code.putJump(0);
+		breakAddresses.push(Code.pc-2);
+		breakCount.push(breakCount.pop()+1);
+	}
+	
+	public void visit(ForT f) {
+		breakCount.push(0);
+	}
+	
 	
 }

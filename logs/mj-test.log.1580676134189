@@ -1,0 +1,1855 @@
+INFO  21:41:43,704 - Compiling source file: C:\Users\anjal\Desktop\Desktop\Fakultet\pp\projekat radna\workspace\MJCompiler\test\program.mj
+INFO  21:41:43,740 - #2 program
+INFO  21:41:43,740 - #20 test302
+INFO  21:41:43,740 - #6 const
+INFO  21:41:43,741 - #20 int
+INFO  21:41:43,741 - #20 jedan
+INFO  21:41:43,742 - #29 =
+INFO  21:41:43,742 - #17 1
+INFO  21:41:43,742 - #5 ;
+INFO  21:41:43,742 - #20 int
+INFO  21:41:43,742 - #20 i
+INFO  21:41:43,742 - #5 ;
+INFO  21:41:43,743 - #20 bool
+INFO  21:41:43,743 - #20 ibool
+INFO  21:41:43,743 - #5 ;
+INFO  21:41:43,743 - #20 int
+INFO  21:41:43,743 - #20 niz
+INFO  21:41:43,743 - #7 [
+INFO  21:41:43,743 - #8 ]
+INFO  21:41:43,743 - #5 ;
+INFO  21:41:43,744 - #3 {
+INFO  21:41:43,744 - #20 int
+INFO  21:41:43,751 - #20 sum
+INFO  21:41:43,751 - #9 (
+INFO  21:41:43,752 - #20 int
+INFO  21:41:43,752 - #20 z
+INFO  21:41:43,752 - #14 ,
+INFO  21:41:43,753 - #20 int
+INFO  21:41:43,753 - #20 d
+INFO  21:41:43,753 - #10 )
+INFO  21:41:43,753 - #3 {
+INFO  21:41:43,754 - #11 return
+INFO  21:41:43,755 - #20 z
+INFO  21:41:43,755 - #12 +
+INFO  21:41:43,756 - #20 d
+INFO  21:41:43,756 - #5 ;
+INFO  21:41:43,757 - #4 }
+INFO  21:41:43,757 - #20 int
+INFO  21:41:43,757 - #20 inkrement
+INFO  21:41:43,758 - #9 (
+INFO  21:41:43,758 - #20 int
+INFO  21:41:43,758 - #20 a
+INFO  21:41:43,758 - #14 ,
+INFO  21:41:43,758 - #20 int
+INFO  21:41:43,758 - #20 inc
+INFO  21:41:43,758 - #10 )
+INFO  21:41:43,758 - #20 int
+INFO  21:41:43,758 - #20 pom
+INFO  21:41:43,758 - #5 ;
+INFO  21:41:43,758 - #3 {
+INFO  21:41:43,759 - #27 if
+INFO  21:41:43,759 - #9 (
+INFO  21:41:43,760 - #20 inc
+INFO  21:41:43,760 - #21 ==
+INFO  21:41:43,760 - #20 jedan
+INFO  21:41:43,760 - #10 )
+INFO  21:41:43,760 - #20 pom
+INFO  21:41:43,761 - #29 =
+INFO  21:41:43,761 - #17 1
+INFO  21:41:43,761 - #5 ;
+INFO  21:41:43,761 - #28 else
+INFO  21:41:43,762 - #27 if
+INFO  21:41:43,762 - #9 (
+INFO  21:41:43,762 - #20 inc
+INFO  21:41:43,762 - #21 ==
+INFO  21:41:43,762 - #17 2
+INFO  21:41:43,762 - #10 )
+INFO  21:41:43,763 - #20 pom
+INFO  21:41:43,763 - #29 =
+INFO  21:41:43,763 - #20 a
+INFO  21:41:43,763 - #5 ;
+INFO  21:41:43,763 - #11 return
+INFO  21:41:43,763 - #20 sum
+INFO  21:41:43,763 - #9 (
+INFO  21:41:43,763 - #20 a
+INFO  21:41:43,764 - #14 ,
+INFO  21:41:43,764 - #20 pom
+INFO  21:41:43,764 - #10 )
+INFO  21:41:43,764 - #5 ;
+INFO  21:41:43,764 - #4 }
+INFO  21:41:43,764 - #20 bool
+INFO  21:41:43,764 - #20 verify
+INFO  21:41:43,764 - #9 (
+INFO  21:41:43,765 - #10 )
+INFO  21:41:43,765 - #3 {
+INFO  21:41:43,765 - #15 print
+INFO  21:41:43,765 - #9 (
+INFO  21:41:43,765 - #18 v
+INFO  21:41:43,766 - #10 )
+INFO  21:41:43,766 - #5 ;
+INFO  21:41:43,766 - #11 return
+INFO  21:41:43,766 - #19 false
+INFO  21:41:43,766 - #5 ;
+INFO  21:41:43,766 - #4 }
+INFO  21:41:43,766 - #16 void
+INFO  21:41:43,766 - #20 main
+INFO  21:41:43,766 - #9 (
+INFO  21:41:43,767 - #10 )
+INFO  21:41:43,767 - #3 {
+INFO  21:41:43,767 - #27 if
+INFO  21:41:43,767 - #9 (
+INFO  21:41:43,767 - #17 1
+INFO  21:41:43,767 - #22 !=
+INFO  21:41:43,767 - #17 1
+INFO  21:41:43,767 - #10 )
+INFO  21:41:43,767 - #15 print
+INFO  21:41:43,767 - #9 (
+INFO  21:41:43,767 - #13 -
+INFO  21:41:43,767 - #17 6
+INFO  21:41:43,767 - #10 )
+INFO  21:41:43,768 - #5 ;
+INFO  21:41:43,768 - #28 else
+INFO  21:41:43,768 - #15 print
+INFO  21:41:43,768 - #9 (
+INFO  21:41:43,768 - #17 0
+INFO  21:41:43,768 - #10 )
+INFO  21:41:43,768 - #5 ;
+INFO  21:41:43,768 - #20 ibool
+INFO  21:41:43,768 - #29 =
+INFO  21:41:43,768 - #19 false
+INFO  21:41:43,768 - #5 ;
+INFO  21:41:43,769 - #20 i
+INFO  21:41:43,769 - #29 =
+INFO  21:41:43,769 - #17 0
+INFO  21:41:43,769 - #5 ;
+INFO  21:41:43,769 - #42 for
+INFO  21:41:43,769 - #9 (
+INFO  21:41:43,769 - #20 i
+INFO  21:41:43,770 - #29 =
+INFO  21:41:43,770 - #17 0
+INFO  21:41:43,770 - #5 ;
+INFO  21:41:43,770 - #20 i
+INFO  21:41:43,770 - #24 <
+INFO  21:41:43,774 - #17 5
+INFO  21:41:43,774 - #5 ;
+INFO  21:41:43,774 - #20 i
+INFO  21:41:43,775 - #33 ++
+INFO  21:41:43,775 - #10 )
+INFO  21:41:43,775 - #3 {
+INFO  21:41:43,775 - #27 if
+INFO  21:41:43,775 - #9 (
+INFO  21:41:43,775 - #20 i
+INFO  21:41:43,775 - #21 ==
+INFO  21:41:43,776 - #17 2
+INFO  21:41:43,776 - #10 )
+INFO  21:41:43,776 - #20 ibool
+INFO  21:41:43,776 - #29 =
+INFO  21:41:43,776 - #19 true
+INFO  21:41:43,776 - #5 ;
+INFO  21:41:43,776 - #4 }
+INFO  21:41:43,776 - #27 if
+INFO  21:41:43,776 - #9 (
+INFO  21:41:43,776 - #20 ibool
+INFO  21:41:43,776 - #10 )
+INFO  21:41:43,777 - #27 if
+INFO  21:41:43,777 - #9 (
+INFO  21:41:43,777 - #20 i
+INFO  21:41:43,777 - #21 ==
+INFO  21:41:43,777 - #17 5
+INFO  21:41:43,777 - #10 )
+INFO  21:41:43,777 - #15 print
+INFO  21:41:43,777 - #9 (
+INFO  21:41:43,777 - #17 1
+INFO  21:41:43,777 - #10 )
+INFO  21:41:43,777 - #5 ;
+INFO  21:41:43,777 - #28 else
+INFO  21:41:43,777 - #15 print
+INFO  21:41:43,777 - #9 (
+INFO  21:41:43,777 - #13 -
+INFO  21:41:43,777 - #17 1
+INFO  21:41:43,777 - #10 )
+INFO  21:41:43,778 - #5 ;
+INFO  21:41:43,778 - #20 niz
+INFO  21:41:43,778 - #29 =
+INFO  21:41:43,778 - #37 new
+INFO  21:41:43,778 - #20 int
+INFO  21:41:43,778 - #7 [
+INFO  21:41:43,778 - #17 3
+INFO  21:41:43,778 - #8 ]
+INFO  21:41:43,778 - #5 ;
+INFO  21:41:43,778 - #20 niz
+INFO  21:41:43,778 - #7 [
+INFO  21:41:43,778 - #17 0
+INFO  21:41:43,778 - #8 ]
+INFO  21:41:43,778 - #29 =
+INFO  21:41:43,778 - #17 1
+INFO  21:41:43,778 - #5 ;
+INFO  21:41:43,779 - #20 niz
+INFO  21:41:43,779 - #7 [
+INFO  21:41:43,779 - #17 1
+INFO  21:41:43,779 - #8 ]
+INFO  21:41:43,779 - #29 =
+INFO  21:41:43,779 - #17 2
+INFO  21:41:43,779 - #5 ;
+INFO  21:41:43,779 - #20 niz
+INFO  21:41:43,779 - #7 [
+INFO  21:41:43,779 - #17 2
+INFO  21:41:43,779 - #8 ]
+INFO  21:41:43,779 - #29 =
+INFO  21:41:43,779 - #20 sum
+INFO  21:41:43,779 - #9 (
+INFO  21:41:43,779 - #20 niz
+INFO  21:41:43,779 - #7 [
+INFO  21:41:43,779 - #17 1
+INFO  21:41:43,779 - #8 ]
+INFO  21:41:43,779 - #14 ,
+INFO  21:41:43,779 - #20 niz
+INFO  21:41:43,779 - #7 [
+INFO  21:41:43,779 - #17 0
+INFO  21:41:43,779 - #8 ]
+INFO  21:41:43,780 - #10 )
+INFO  21:41:43,780 - #12 +
+INFO  21:41:43,780 - #17 1
+INFO  21:41:43,780 - #5 ;
+INFO  21:41:43,780 - #27 if
+INFO  21:41:43,780 - #9 (
+INFO  21:41:43,780 - #20 niz
+INFO  21:41:43,780 - #7 [
+INFO  21:41:43,780 - #17 2
+INFO  21:41:43,780 - #8 ]
+INFO  21:41:43,780 - #21 ==
+INFO  21:41:43,780 - #17 4
+INFO  21:41:43,780 - #35 ||
+INFO  21:41:43,780 - #20 verify
+INFO  21:41:43,780 - #9 (
+INFO  21:41:43,780 - #10 )
+INFO  21:41:43,781 - #10 )
+INFO  21:41:43,781 - #15 print
+INFO  21:41:43,781 - #9 (
+INFO  21:41:43,781 - #20 ord
+INFO  21:41:43,781 - #9 (
+INFO  21:41:43,781 - #18 A
+INFO  21:41:43,781 - #10 )
+INFO  21:41:43,781 - #10 )
+INFO  21:41:43,781 - #5 ;
+INFO  21:41:43,781 - #28 else
+INFO  21:41:43,781 - #15 print
+INFO  21:41:43,781 - #9 (
+INFO  21:41:43,781 - #20 ord
+INFO  21:41:43,781 - #9 (
+INFO  21:41:43,781 - #18 a
+INFO  21:41:43,781 - #10 )
+INFO  21:41:43,781 - #10 )
+INFO  21:41:43,781 - #5 ;
+INFO  21:41:43,781 - #15 print
+INFO  21:41:43,782 - #9 (
+INFO  21:41:43,782 - #20 eol
+INFO  21:41:43,782 - #10 )
+INFO  21:41:43,782 - #5 ;
+INFO  21:41:43,782 - #20 i
+INFO  21:41:43,782 - #29 =
+INFO  21:41:43,782 - #17 0
+INFO  21:41:43,782 - #5 ;
+INFO  21:41:43,782 - #42 for
+INFO  21:41:43,782 - #9 (
+INFO  21:41:43,782 - #5 ;
+INFO  21:41:43,783 - #20 i
+INFO  21:41:43,783 - #24 <
+INFO  21:41:43,783 - #17 10
+INFO  21:41:43,783 - #5 ;
+INFO  21:41:43,783 - #10 )
+INFO  21:41:43,783 - #3 {
+INFO  21:41:43,783 - #27 if
+INFO  21:41:43,783 - #9 (
+INFO  21:41:43,783 - #20 i
+INFO  21:41:43,783 - #21 ==
+INFO  21:41:43,783 - #17 2
+INFO  21:41:43,783 - #10 )
+INFO  21:41:43,783 - #3 {
+INFO  21:41:43,783 - #20 i
+INFO  21:41:43,783 - #33 ++
+INFO  21:41:43,783 - #5 ;
+INFO  21:41:43,783 - #31 continue
+INFO  21:41:43,783 - #5 ;
+INFO  21:41:43,784 - #4 }
+INFO  21:41:43,784 - #27 if
+INFO  21:41:43,784 - #9 (
+INFO  21:41:43,784 - #20 i
+INFO  21:41:43,784 - #21 ==
+INFO  21:41:43,784 - #17 3
+INFO  21:41:43,784 - #10 )
+INFO  21:41:43,784 - #30 break
+INFO  21:41:43,784 - #5 ;
+INFO  21:41:43,784 - #20 i
+INFO  21:41:43,785 - #29 =
+INFO  21:41:43,785 - #20 inkrement
+INFO  21:41:43,785 - #9 (
+INFO  21:41:43,785 - #20 i
+INFO  21:41:43,785 - #14 ,
+INFO  21:41:43,785 - #17 1
+INFO  21:41:43,785 - #10 )
+INFO  21:41:43,785 - #5 ;
+INFO  21:41:43,785 - #4 }
+INFO  21:41:43,785 - #27 if
+INFO  21:41:43,785 - #9 (
+INFO  21:41:43,785 - #20 i
+INFO  21:41:43,785 - #21 ==
+INFO  21:41:43,785 - #17 3
+INFO  21:41:43,785 - #36 &&
+INFO  21:41:43,785 - #19 true
+INFO  21:41:43,785 - #10 )
+INFO  21:41:43,786 - #15 print
+INFO  21:41:43,786 - #9 (
+INFO  21:41:43,786 - #17 4
+INFO  21:41:43,786 - #10 )
+INFO  21:41:43,786 - #5 ;
+INFO  21:41:43,786 - #28 else
+INFO  21:41:43,786 - #15 print
+INFO  21:41:43,786 - #9 (
+INFO  21:41:43,786 - #13 -
+INFO  21:41:43,786 - #17 4
+INFO  21:41:43,786 - #10 )
+INFO  21:41:43,786 - #5 ;
+INFO  21:41:43,786 - #32 read
+INFO  21:41:43,786 - #9 (
+INFO  21:41:43,786 - #20 niz
+INFO  21:41:43,786 - #7 [
+INFO  21:41:43,786 - #17 0
+INFO  21:41:43,786 - #8 ]
+INFO  21:41:43,787 - #10 )
+INFO  21:41:43,787 - #5 ;
+INFO  21:41:43,787 - #32 read
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,787 - #20 niz
+INFO  21:41:43,787 - #7 [
+INFO  21:41:43,787 - #17 1
+INFO  21:41:43,787 - #8 ]
+INFO  21:41:43,787 - #10 )
+INFO  21:41:43,787 - #5 ;
+INFO  21:41:43,787 - #32 read
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,787 - #20 niz
+INFO  21:41:43,787 - #7 [
+INFO  21:41:43,787 - #17 2
+INFO  21:41:43,787 - #8 ]
+INFO  21:41:43,787 - #10 )
+INFO  21:41:43,787 - #5 ;
+INFO  21:41:43,787 - #15 print
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,787 - #20 eol
+INFO  21:41:43,787 - #10 )
+INFO  21:41:43,787 - #5 ;
+INFO  21:41:43,787 - #15 print
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,787 - #20 sum
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,787 - #20 sum
+INFO  21:41:43,787 - #9 (
+INFO  21:41:43,788 - #20 niz
+INFO  21:41:43,788 - #7 [
+INFO  21:41:43,788 - #17 0
+INFO  21:41:43,788 - #8 ]
+INFO  21:41:43,788 - #14 ,
+INFO  21:41:43,788 - #20 niz
+INFO  21:41:43,788 - #7 [
+INFO  21:41:43,788 - #17 1
+INFO  21:41:43,788 - #8 ]
+INFO  21:41:43,788 - #10 )
+INFO  21:41:43,788 - #14 ,
+INFO  21:41:43,788 - #20 niz
+INFO  21:41:43,788 - #7 [
+INFO  21:41:43,788 - #17 2
+INFO  21:41:43,788 - #8 ]
+INFO  21:41:43,788 - #10 )
+INFO  21:41:43,788 - #10 )
+INFO  21:41:43,788 - #5 ;
+INFO  21:41:43,788 - #15 print
+INFO  21:41:43,788 - #9 (
+INFO  21:41:43,788 - #20 eol
+INFO  21:41:43,788 - #10 )
+INFO  21:41:43,788 - #5 ;
+INFO  21:41:43,788 - #15 print
+INFO  21:41:43,788 - #9 (
+INFO  21:41:43,788 - #20 inkrement
+INFO  21:41:43,788 - #9 (
+INFO  21:41:43,788 - #20 niz
+INFO  21:41:43,788 - #7 [
+INFO  21:41:43,788 - #17 2
+INFO  21:41:43,788 - #8 ]
+INFO  21:41:43,788 - #14 ,
+INFO  21:41:43,789 - #17 2
+INFO  21:41:43,789 - #10 )
+INFO  21:41:43,789 - #10 )
+INFO  21:41:43,789 - #5 ;
+INFO  21:41:43,789 - #4 }
+INFO  21:41:43,789 - #4 }
+INFO  21:41:43,801 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclarationsList(
+    AllDeclarationsList(
+      AllDeclarationsList(
+        AllDeclarationsList(
+          NoDecl(
+          ) [NoDecl]
+          OneConstDeclListEnded(
+            Type(
+             int
+            ) [Type]
+            OneSingleConstDecl(
+              ConstDeclNumber(
+               jedan
+               1
+              ) [ConstDeclNumber]
+            ) [OneSingleConstDecl]
+          ) [OneConstDeclListEnded]
+        ) [AllDeclarationsList]
+        OneVarDeclListEnded(
+          Type(
+           int
+          ) [Type]
+          OneSingleVarDecl(
+            VarDeclSingle(
+             i
+            ) [VarDeclSingle]
+          ) [OneSingleVarDecl]
+        ) [OneVarDeclListEnded]
+      ) [AllDeclarationsList]
+      OneVarDeclListEnded(
+        Type(
+         bool
+        ) [Type]
+        OneSingleVarDecl(
+          VarDeclSingle(
+           ibool
+          ) [VarDeclSingle]
+        ) [OneSingleVarDecl]
+      ) [OneVarDeclListEnded]
+    ) [AllDeclarationsList]
+    OneVarDeclListEnded(
+      Type(
+       int
+      ) [Type]
+      OneSingleVarDecl(
+        VarDeclBrackets(
+         niz
+        ) [VarDeclBrackets]
+      ) [OneSingleVarDecl]
+    ) [OneVarDeclListEnded]
+  ) [AllDeclarationsList]
+  MethodDeclarations(
+    MethodDeclarations(
+      MethodDeclarations(
+        MethodDeclarations(
+          NoMethodDecl(
+          ) [NoMethodDecl]
+          TypeMethodDecl(
+            MethodTypeName(
+              Type(
+               int
+              ) [Type]
+             sum
+            ) [MethodTypeName]
+            FormParams(
+              FormalParamDecls(
+                SingleFormalParamDecl(
+                  FormalParamDeclNoBrackets(
+                    Type(
+                     int
+                    ) [Type]
+                   z
+                  ) [FormalParamDeclNoBrackets]
+                ) [SingleFormalParamDecl]
+                FormalParamDeclNoBrackets(
+                  Type(
+                   int
+                  ) [Type]
+                 d
+                ) [FormalParamDeclNoBrackets]
+              ) [FormalParamDecls]
+            ) [FormParams]
+            NoVarDecls(
+            ) [NoVarDecls]
+            Statements(
+              NoStmt(
+              ) [NoStmt]
+              ReturnExpr(
+                AddExpr(
+                  SingleExpr(
+                    SingleTerm(
+                      Var(
+                        SimpleDesignator(
+                         z
+                        ) [SimpleDesignator]
+                      ) [Var]
+                    ) [SingleTerm]
+                  ) [SingleExpr]
+                  Addop(
+                  ) [Addop]
+                  SingleTerm(
+                    Var(
+                      SimpleDesignator(
+                       d
+                      ) [SimpleDesignator]
+                    ) [Var]
+                  ) [SingleTerm]
+                ) [AddExpr]
+              ) [ReturnExpr]
+            ) [Statements]
+          ) [TypeMethodDecl]
+        ) [MethodDeclarations]
+        TypeMethodDecl(
+          MethodTypeName(
+            Type(
+             int
+            ) [Type]
+           inkrement
+          ) [MethodTypeName]
+          FormParams(
+            FormalParamDecls(
+              SingleFormalParamDecl(
+                FormalParamDeclNoBrackets(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                ) [FormalParamDeclNoBrackets]
+              ) [SingleFormalParamDecl]
+              FormalParamDeclNoBrackets(
+                Type(
+                 int
+                ) [Type]
+               inc
+              ) [FormalParamDeclNoBrackets]
+            ) [FormalParamDecls]
+          ) [FormParams]
+          VarMultiDeclList(
+            NoVarDecls(
+            ) [NoVarDecls]
+            Type(
+             int
+            ) [Type]
+            OneSingleVarDecl(
+              VarDeclSingle(
+               pom
+              ) [VarDeclSingle]
+            ) [OneSingleVarDecl]
+          ) [VarMultiDeclList]
+          Statements(
+            Statements(
+              NoStmt(
+              ) [NoStmt]
+              MatchedStatement(
+                IfT(
+                ) [IfT]
+                SingleCondition(
+                  SingleCondTerm(
+                    RelCondFact(
+                      SingleExpr(
+                        SingleTerm(
+                          Var(
+                            SimpleDesignator(
+                             inc
+                            ) [SimpleDesignator]
+                          ) [Var]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                      EqualOp(
+                       ==
+                      ) [EqualOp]
+                      SingleExpr(
+                        SingleTerm(
+                          Var(
+                            SimpleDesignator(
+                             jedan
+                            ) [SimpleDesignator]
+                          ) [Var]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                    ) [RelCondFact]
+                  ) [SingleCondTerm]
+                ) [SingleCondition]
+                RParenT(
+                ) [RParenT]
+                DesignatorStmt(
+                  Assignment(
+                    SimpleDesignator(
+                     pom
+                    ) [SimpleDesignator]
+                    SingleExpr(
+                      SingleTerm(
+                        NumConst(
+                         1
+                        ) [NumConst]
+                      ) [SingleTerm]
+                    ) [SingleExpr]
+                  ) [Assignment]
+                ) [DesignatorStmt]
+                ElseT(
+                ) [ElseT]
+                UnmatchedStatement(
+                  IfT(
+                  ) [IfT]
+                  SingleCondition(
+                    SingleCondTerm(
+                      RelCondFact(
+                        SingleExpr(
+                          SingleTerm(
+                            Var(
+                              SimpleDesignator(
+                               inc
+                              ) [SimpleDesignator]
+                            ) [Var]
+                          ) [SingleTerm]
+                        ) [SingleExpr]
+                        EqualOp(
+                         ==
+                        ) [EqualOp]
+                        SingleExpr(
+                          SingleTerm(
+                            NumConst(
+                             2
+                            ) [NumConst]
+                          ) [SingleTerm]
+                        ) [SingleExpr]
+                      ) [RelCondFact]
+                    ) [SingleCondTerm]
+                  ) [SingleCondition]
+                  RParenT(
+                  ) [RParenT]
+                  DesignatorStmt(
+                    Assignment(
+                      SimpleDesignator(
+                       pom
+                      ) [SimpleDesignator]
+                      SingleExpr(
+                        SingleTerm(
+                          Var(
+                            SimpleDesignator(
+                             a
+                            ) [SimpleDesignator]
+                          ) [Var]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                    ) [Assignment]
+                  ) [DesignatorStmt]
+                ) [UnmatchedStatement]
+              ) [MatchedStatement]
+            ) [Statements]
+            ReturnExpr(
+              SingleExpr(
+                SingleTerm(
+                  FuncCallFactor(
+                    SimpleDesignator(
+                     sum
+                    ) [SimpleDesignator]
+                    Actuals(
+                      ActualParams(
+                        ActualParam(
+                          SingleExpr(
+                            SingleTerm(
+                              Var(
+                                SimpleDesignator(
+                                 a
+                                ) [SimpleDesignator]
+                              ) [Var]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [ActualParam]
+                        SingleExpr(
+                          SingleTerm(
+                            Var(
+                              SimpleDesignator(
+                               pom
+                              ) [SimpleDesignator]
+                            ) [Var]
+                          ) [SingleTerm]
+                        ) [SingleExpr]
+                      ) [ActualParams]
+                    ) [Actuals]
+                  ) [FuncCallFactor]
+                ) [SingleTerm]
+              ) [SingleExpr]
+            ) [ReturnExpr]
+          ) [Statements]
+        ) [TypeMethodDecl]
+      ) [MethodDeclarations]
+      TypeMethodDecl(
+        MethodTypeName(
+          Type(
+           bool
+          ) [Type]
+         verify
+        ) [MethodTypeName]
+        NoFormParam(
+        ) [NoFormParam]
+        NoVarDecls(
+        ) [NoVarDecls]
+        Statements(
+          Statements(
+            NoStmt(
+            ) [NoStmt]
+            PrintStmt(
+              SingleExpr(
+                SingleTerm(
+                  CharConst(
+                   v
+                  ) [CharConst]
+                ) [SingleTerm]
+              ) [SingleExpr]
+            ) [PrintStmt]
+          ) [Statements]
+          ReturnExpr(
+            SingleExpr(
+              SingleTerm(
+                BoolConst(
+                 false
+                ) [BoolConst]
+              ) [SingleTerm]
+            ) [SingleExpr]
+          ) [ReturnExpr]
+        ) [Statements]
+      ) [TypeMethodDecl]
+    ) [MethodDeclarations]
+    VoidMethodDecl(
+      MethodVoidName(
+       main
+      ) [MethodVoidName]
+      NoFormParam(
+      ) [NoFormParam]
+      NoVarDecls(
+      ) [NoVarDecls]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              Statements(
+                                Statements(
+                                  Statements(
+                                    Statements(
+                                      Statements(
+                                        Statements(
+                                          Statements(
+                                            Statements(
+                                              Statements(
+                                                NoStmt(
+                                                ) [NoStmt]
+                                                MatchedStatement(
+                                                  IfT(
+                                                  ) [IfT]
+                                                  SingleCondition(
+                                                    SingleCondTerm(
+                                                      RelCondFact(
+                                                        SingleExpr(
+                                                          SingleTerm(
+                                                            NumConst(
+                                                             1
+                                                            ) [NumConst]
+                                                          ) [SingleTerm]
+                                                        ) [SingleExpr]
+                                                        DifferentOp(
+                                                         !=
+                                                        ) [DifferentOp]
+                                                        SingleExpr(
+                                                          SingleTerm(
+                                                            NumConst(
+                                                             1
+                                                            ) [NumConst]
+                                                          ) [SingleTerm]
+                                                        ) [SingleExpr]
+                                                      ) [RelCondFact]
+                                                    ) [SingleCondTerm]
+                                                  ) [SingleCondition]
+                                                  RParenT(
+                                                  ) [RParenT]
+                                                  PrintStmt(
+                                                    SingleNegExpr(
+                                                      NegTerm(
+                                                        SingleTerm(
+                                                          NumConst(
+                                                           6
+                                                          ) [NumConst]
+                                                        ) [SingleTerm]
+                                                      ) [NegTerm]
+                                                    ) [SingleNegExpr]
+                                                  ) [PrintStmt]
+                                                  ElseT(
+                                                  ) [ElseT]
+                                                  PrintStmt(
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        NumConst(
+                                                         0
+                                                        ) [NumConst]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                  ) [PrintStmt]
+                                                ) [MatchedStatement]
+                                              ) [Statements]
+                                              DesignatorStmt(
+                                                Assignment(
+                                                  SimpleDesignator(
+                                                   ibool
+                                                  ) [SimpleDesignator]
+                                                  SingleExpr(
+                                                    SingleTerm(
+                                                      BoolConst(
+                                                       false
+                                                      ) [BoolConst]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpr]
+                                                ) [Assignment]
+                                              ) [DesignatorStmt]
+                                            ) [Statements]
+                                            DesignatorStmt(
+                                              Assignment(
+                                                SimpleDesignator(
+                                                 i
+                                                ) [SimpleDesignator]
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    NumConst(
+                                                     0
+                                                    ) [NumConst]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [Assignment]
+                                            ) [DesignatorStmt]
+                                          ) [Statements]
+                                          ForStatement(
+                                            ForT(
+                                            ) [ForT]
+                                            OneDesignatorStmt(
+                                              Assignment(
+                                                SimpleDesignator(
+                                                 i
+                                                ) [SimpleDesignator]
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    NumConst(
+                                                     0
+                                                    ) [NumConst]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [Assignment]
+                                            ) [OneDesignatorStmt]
+                                            SemiT(
+                                            ) [SemiT]
+                                            OptionalCondition(
+                                              SingleCondition(
+                                                SingleCondTerm(
+                                                  RelCondFact(
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        Var(
+                                                          SimpleDesignator(
+                                                           i
+                                                          ) [SimpleDesignator]
+                                                        ) [Var]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                    LessOp(
+                                                     <
+                                                    ) [LessOp]
+                                                    SingleExpr(
+                                                      SingleTerm(
+                                                        NumConst(
+                                                         5
+                                                        ) [NumConst]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpr]
+                                                  ) [RelCondFact]
+                                                ) [SingleCondTerm]
+                                              ) [SingleCondition]
+                                            ) [OptionalCondition]
+                                            SemiTT(
+                                            ) [SemiTT]
+                                            OneDesignatorStmt(
+                                              Increment(
+                                                SimpleDesignator(
+                                                 i
+                                                ) [SimpleDesignator]
+                                              ) [Increment]
+                                            ) [OneDesignatorStmt]
+                                            RParenTT(
+                                            ) [RParenTT]
+                                            BlockOfStmts(
+                                              Statements(
+                                                NoStmt(
+                                                ) [NoStmt]
+                                                UnmatchedStatement(
+                                                  IfT(
+                                                  ) [IfT]
+                                                  SingleCondition(
+                                                    SingleCondTerm(
+                                                      RelCondFact(
+                                                        SingleExpr(
+                                                          SingleTerm(
+                                                            Var(
+                                                              SimpleDesignator(
+                                                               i
+                                                              ) [SimpleDesignator]
+                                                            ) [Var]
+                                                          ) [SingleTerm]
+                                                        ) [SingleExpr]
+                                                        EqualOp(
+                                                         ==
+                                                        ) [EqualOp]
+                                                        SingleExpr(
+                                                          SingleTerm(
+                                                            NumConst(
+                                                             2
+                                                            ) [NumConst]
+                                                          ) [SingleTerm]
+                                                        ) [SingleExpr]
+                                                      ) [RelCondFact]
+                                                    ) [SingleCondTerm]
+                                                  ) [SingleCondition]
+                                                  RParenT(
+                                                  ) [RParenT]
+                                                  DesignatorStmt(
+                                                    Assignment(
+                                                      SimpleDesignator(
+                                                       ibool
+                                                      ) [SimpleDesignator]
+                                                      SingleExpr(
+                                                        SingleTerm(
+                                                          BoolConst(
+                                                           true
+                                                          ) [BoolConst]
+                                                        ) [SingleTerm]
+                                                      ) [SingleExpr]
+                                                    ) [Assignment]
+                                                  ) [DesignatorStmt]
+                                                ) [UnmatchedStatement]
+                                              ) [Statements]
+                                            ) [BlockOfStmts]
+                                          ) [ForStatement]
+                                        ) [Statements]
+                                        UnmatchedStatement(
+                                          IfT(
+                                          ) [IfT]
+                                          SingleCondition(
+                                            SingleCondTerm(
+                                              SingleCondFact(
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    Var(
+                                                      SimpleDesignator(
+                                                       ibool
+                                                      ) [SimpleDesignator]
+                                                    ) [Var]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [SingleCondFact]
+                                            ) [SingleCondTerm]
+                                          ) [SingleCondition]
+                                          RParenT(
+                                          ) [RParenT]
+                                          MatchedStatement(
+                                            IfT(
+                                            ) [IfT]
+                                            SingleCondition(
+                                              SingleCondTerm(
+                                                RelCondFact(
+                                                  SingleExpr(
+                                                    SingleTerm(
+                                                      Var(
+                                                        SimpleDesignator(
+                                                         i
+                                                        ) [SimpleDesignator]
+                                                      ) [Var]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpr]
+                                                  EqualOp(
+                                                   ==
+                                                  ) [EqualOp]
+                                                  SingleExpr(
+                                                    SingleTerm(
+                                                      NumConst(
+                                                       5
+                                                      ) [NumConst]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpr]
+                                                ) [RelCondFact]
+                                              ) [SingleCondTerm]
+                                            ) [SingleCondition]
+                                            RParenT(
+                                            ) [RParenT]
+                                            PrintStmt(
+                                              SingleExpr(
+                                                SingleTerm(
+                                                  NumConst(
+                                                   1
+                                                  ) [NumConst]
+                                                ) [SingleTerm]
+                                              ) [SingleExpr]
+                                            ) [PrintStmt]
+                                            ElseT(
+                                            ) [ElseT]
+                                            PrintStmt(
+                                              SingleNegExpr(
+                                                NegTerm(
+                                                  SingleTerm(
+                                                    NumConst(
+                                                     1
+                                                    ) [NumConst]
+                                                  ) [SingleTerm]
+                                                ) [NegTerm]
+                                              ) [SingleNegExpr]
+                                            ) [PrintStmt]
+                                          ) [MatchedStatement]
+                                        ) [UnmatchedStatement]
+                                      ) [Statements]
+                                      DesignatorStmt(
+                                        Assignment(
+                                          SimpleDesignator(
+                                           niz
+                                          ) [SimpleDesignator]
+                                          SingleExpr(
+                                            SingleTerm(
+                                              NewArray(
+                                                Type(
+                                                 int
+                                                ) [Type]
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    NumConst(
+                                                     3
+                                                    ) [NumConst]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [NewArray]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                        ) [Assignment]
+                                      ) [DesignatorStmt]
+                                    ) [Statements]
+                                    DesignatorStmt(
+                                      Assignment(
+                                        DesignatorArray(
+                                          SimpleDesignator(
+                                           niz
+                                          ) [SimpleDesignator]
+                                          SingleExpr(
+                                            SingleTerm(
+                                              NumConst(
+                                               0
+                                              ) [NumConst]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                        ) [DesignatorArray]
+                                        SingleExpr(
+                                          SingleTerm(
+                                            NumConst(
+                                             1
+                                            ) [NumConst]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                      ) [Assignment]
+                                    ) [DesignatorStmt]
+                                  ) [Statements]
+                                  DesignatorStmt(
+                                    Assignment(
+                                      DesignatorArray(
+                                        SimpleDesignator(
+                                         niz
+                                        ) [SimpleDesignator]
+                                        SingleExpr(
+                                          SingleTerm(
+                                            NumConst(
+                                             1
+                                            ) [NumConst]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                      ) [DesignatorArray]
+                                      SingleExpr(
+                                        SingleTerm(
+                                          NumConst(
+                                           2
+                                          ) [NumConst]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                    ) [Assignment]
+                                  ) [DesignatorStmt]
+                                ) [Statements]
+                                DesignatorStmt(
+                                  Assignment(
+                                    DesignatorArray(
+                                      SimpleDesignator(
+                                       niz
+                                      ) [SimpleDesignator]
+                                      SingleExpr(
+                                        SingleTerm(
+                                          NumConst(
+                                           2
+                                          ) [NumConst]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                    ) [DesignatorArray]
+                                    AddExpr(
+                                      SingleExpr(
+                                        SingleTerm(
+                                          FuncCallFactor(
+                                            SimpleDesignator(
+                                             sum
+                                            ) [SimpleDesignator]
+                                            Actuals(
+                                              ActualParams(
+                                                ActualParam(
+                                                  SingleExpr(
+                                                    SingleTerm(
+                                                      Var(
+                                                        DesignatorArray(
+                                                          SimpleDesignator(
+                                                           niz
+                                                          ) [SimpleDesignator]
+                                                          SingleExpr(
+                                                            SingleTerm(
+                                                              NumConst(
+                                                               1
+                                                              ) [NumConst]
+                                                            ) [SingleTerm]
+                                                          ) [SingleExpr]
+                                                        ) [DesignatorArray]
+                                                      ) [Var]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpr]
+                                                ) [ActualParam]
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    Var(
+                                                      DesignatorArray(
+                                                        SimpleDesignator(
+                                                         niz
+                                                        ) [SimpleDesignator]
+                                                        SingleExpr(
+                                                          SingleTerm(
+                                                            NumConst(
+                                                             0
+                                                            ) [NumConst]
+                                                          ) [SingleTerm]
+                                                        ) [SingleExpr]
+                                                      ) [DesignatorArray]
+                                                    ) [Var]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [ActualParams]
+                                            ) [Actuals]
+                                          ) [FuncCallFactor]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                      Addop(
+                                      ) [Addop]
+                                      SingleTerm(
+                                        NumConst(
+                                         1
+                                        ) [NumConst]
+                                      ) [SingleTerm]
+                                    ) [AddExpr]
+                                  ) [Assignment]
+                                ) [DesignatorStmt]
+                              ) [Statements]
+                              MatchedStatement(
+                                IfT(
+                                ) [IfT]
+                                MultipleConditionsOR(
+                                  SingleCondition(
+                                    SingleCondTerm(
+                                      RelCondFact(
+                                        SingleExpr(
+                                          SingleTerm(
+                                            Var(
+                                              DesignatorArray(
+                                                SimpleDesignator(
+                                                 niz
+                                                ) [SimpleDesignator]
+                                                SingleExpr(
+                                                  SingleTerm(
+                                                    NumConst(
+                                                     2
+                                                    ) [NumConst]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpr]
+                                              ) [DesignatorArray]
+                                            ) [Var]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                        EqualOp(
+                                         ==
+                                        ) [EqualOp]
+                                        SingleExpr(
+                                          SingleTerm(
+                                            NumConst(
+                                             4
+                                            ) [NumConst]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                      ) [RelCondFact]
+                                    ) [SingleCondTerm]
+                                  ) [SingleCondition]
+                                  SingleCondTerm(
+                                    SingleCondFact(
+                                      SingleExpr(
+                                        SingleTerm(
+                                          FuncCallFactor(
+                                            SimpleDesignator(
+                                             verify
+                                            ) [SimpleDesignator]
+                                            NoActuals(
+                                            ) [NoActuals]
+                                          ) [FuncCallFactor]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                    ) [SingleCondFact]
+                                  ) [SingleCondTerm]
+                                ) [MultipleConditionsOR]
+                                RParenT(
+                                ) [RParenT]
+                                PrintStmt(
+                                  SingleExpr(
+                                    SingleTerm(
+                                      FuncCallFactor(
+                                        SimpleDesignator(
+                                         ord
+                                        ) [SimpleDesignator]
+                                        Actuals(
+                                          ActualParam(
+                                            SingleExpr(
+                                              SingleTerm(
+                                                CharConst(
+                                                 A
+                                                ) [CharConst]
+                                              ) [SingleTerm]
+                                            ) [SingleExpr]
+                                          ) [ActualParam]
+                                        ) [Actuals]
+                                      ) [FuncCallFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [PrintStmt]
+                                ElseT(
+                                ) [ElseT]
+                                PrintStmt(
+                                  SingleExpr(
+                                    SingleTerm(
+                                      FuncCallFactor(
+                                        SimpleDesignator(
+                                         ord
+                                        ) [SimpleDesignator]
+                                        Actuals(
+                                          ActualParam(
+                                            SingleExpr(
+                                              SingleTerm(
+                                                CharConst(
+                                                 a
+                                                ) [CharConst]
+                                              ) [SingleTerm]
+                                            ) [SingleExpr]
+                                          ) [ActualParam]
+                                        ) [Actuals]
+                                      ) [FuncCallFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [PrintStmt]
+                              ) [MatchedStatement]
+                            ) [Statements]
+                            PrintStmt(
+                              SingleExpr(
+                                SingleTerm(
+                                  Var(
+                                    SimpleDesignator(
+                                     eol
+                                    ) [SimpleDesignator]
+                                  ) [Var]
+                                ) [SingleTerm]
+                              ) [SingleExpr]
+                            ) [PrintStmt]
+                          ) [Statements]
+                          DesignatorStmt(
+                            Assignment(
+                              SimpleDesignator(
+                               i
+                              ) [SimpleDesignator]
+                              SingleExpr(
+                                SingleTerm(
+                                  NumConst(
+                                   0
+                                  ) [NumConst]
+                                ) [SingleTerm]
+                              ) [SingleExpr]
+                            ) [Assignment]
+                          ) [DesignatorStmt]
+                        ) [Statements]
+                        ForStatement(
+                          ForT(
+                          ) [ForT]
+                          NoDesignatorStmt(
+                          ) [NoDesignatorStmt]
+                          SemiT(
+                          ) [SemiT]
+                          OptionalCondition(
+                            SingleCondition(
+                              SingleCondTerm(
+                                RelCondFact(
+                                  SingleExpr(
+                                    SingleTerm(
+                                      Var(
+                                        SimpleDesignator(
+                                         i
+                                        ) [SimpleDesignator]
+                                      ) [Var]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                  LessOp(
+                                   <
+                                  ) [LessOp]
+                                  SingleExpr(
+                                    SingleTerm(
+                                      NumConst(
+                                       10
+                                      ) [NumConst]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [RelCondFact]
+                              ) [SingleCondTerm]
+                            ) [SingleCondition]
+                          ) [OptionalCondition]
+                          SemiTT(
+                          ) [SemiTT]
+                          NoDesignatorStmt(
+                          ) [NoDesignatorStmt]
+                          RParenTT(
+                          ) [RParenTT]
+                          BlockOfStmts(
+                            Statements(
+                              Statements(
+                                Statements(
+                                  NoStmt(
+                                  ) [NoStmt]
+                                  UnmatchedStatement(
+                                    IfT(
+                                    ) [IfT]
+                                    SingleCondition(
+                                      SingleCondTerm(
+                                        RelCondFact(
+                                          SingleExpr(
+                                            SingleTerm(
+                                              Var(
+                                                SimpleDesignator(
+                                                 i
+                                                ) [SimpleDesignator]
+                                              ) [Var]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                          EqualOp(
+                                           ==
+                                          ) [EqualOp]
+                                          SingleExpr(
+                                            SingleTerm(
+                                              NumConst(
+                                               2
+                                              ) [NumConst]
+                                            ) [SingleTerm]
+                                          ) [SingleExpr]
+                                        ) [RelCondFact]
+                                      ) [SingleCondTerm]
+                                    ) [SingleCondition]
+                                    RParenT(
+                                    ) [RParenT]
+                                    BlockOfStmts(
+                                      Statements(
+                                        Statements(
+                                          NoStmt(
+                                          ) [NoStmt]
+                                          DesignatorStmt(
+                                            Increment(
+                                              SimpleDesignator(
+                                               i
+                                              ) [SimpleDesignator]
+                                            ) [Increment]
+                                          ) [DesignatorStmt]
+                                        ) [Statements]
+                                        ContinueStatement(
+                                        ) [ContinueStatement]
+                                      ) [Statements]
+                                    ) [BlockOfStmts]
+                                  ) [UnmatchedStatement]
+                                ) [Statements]
+                                UnmatchedStatement(
+                                  IfT(
+                                  ) [IfT]
+                                  SingleCondition(
+                                    SingleCondTerm(
+                                      RelCondFact(
+                                        SingleExpr(
+                                          SingleTerm(
+                                            Var(
+                                              SimpleDesignator(
+                                               i
+                                              ) [SimpleDesignator]
+                                            ) [Var]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                        EqualOp(
+                                         ==
+                                        ) [EqualOp]
+                                        SingleExpr(
+                                          SingleTerm(
+                                            NumConst(
+                                             3
+                                            ) [NumConst]
+                                          ) [SingleTerm]
+                                        ) [SingleExpr]
+                                      ) [RelCondFact]
+                                    ) [SingleCondTerm]
+                                  ) [SingleCondition]
+                                  RParenT(
+                                  ) [RParenT]
+                                  BreakStatement(
+                                  ) [BreakStatement]
+                                ) [UnmatchedStatement]
+                              ) [Statements]
+                              DesignatorStmt(
+                                Assignment(
+                                  SimpleDesignator(
+                                   i
+                                  ) [SimpleDesignator]
+                                  SingleExpr(
+                                    SingleTerm(
+                                      FuncCallFactor(
+                                        SimpleDesignator(
+                                         inkrement
+                                        ) [SimpleDesignator]
+                                        Actuals(
+                                          ActualParams(
+                                            ActualParam(
+                                              SingleExpr(
+                                                SingleTerm(
+                                                  Var(
+                                                    SimpleDesignator(
+                                                     i
+                                                    ) [SimpleDesignator]
+                                                  ) [Var]
+                                                ) [SingleTerm]
+                                              ) [SingleExpr]
+                                            ) [ActualParam]
+                                            SingleExpr(
+                                              SingleTerm(
+                                                NumConst(
+                                                 1
+                                                ) [NumConst]
+                                              ) [SingleTerm]
+                                            ) [SingleExpr]
+                                          ) [ActualParams]
+                                        ) [Actuals]
+                                      ) [FuncCallFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleExpr]
+                                ) [Assignment]
+                              ) [DesignatorStmt]
+                            ) [Statements]
+                          ) [BlockOfStmts]
+                        ) [ForStatement]
+                      ) [Statements]
+                      MatchedStatement(
+                        IfT(
+                        ) [IfT]
+                        SingleCondition(
+                          MultipleConditionsAND(
+                            SingleCondTerm(
+                              RelCondFact(
+                                SingleExpr(
+                                  SingleTerm(
+                                    Var(
+                                      SimpleDesignator(
+                                       i
+                                      ) [SimpleDesignator]
+                                    ) [Var]
+                                  ) [SingleTerm]
+                                ) [SingleExpr]
+                                EqualOp(
+                                 ==
+                                ) [EqualOp]
+                                SingleExpr(
+                                  SingleTerm(
+                                    NumConst(
+                                     3
+                                    ) [NumConst]
+                                  ) [SingleTerm]
+                                ) [SingleExpr]
+                              ) [RelCondFact]
+                            ) [SingleCondTerm]
+                            SingleCondFact(
+                              SingleExpr(
+                                SingleTerm(
+                                  BoolConst(
+                                   true
+                                  ) [BoolConst]
+                                ) [SingleTerm]
+                              ) [SingleExpr]
+                            ) [SingleCondFact]
+                          ) [MultipleConditionsAND]
+                        ) [SingleCondition]
+                        RParenT(
+                        ) [RParenT]
+                        PrintStmt(
+                          SingleExpr(
+                            SingleTerm(
+                              NumConst(
+                               4
+                              ) [NumConst]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [PrintStmt]
+                        ElseT(
+                        ) [ElseT]
+                        PrintStmt(
+                          SingleNegExpr(
+                            NegTerm(
+                              SingleTerm(
+                                NumConst(
+                                 4
+                                ) [NumConst]
+                              ) [SingleTerm]
+                            ) [NegTerm]
+                          ) [SingleNegExpr]
+                        ) [PrintStmt]
+                      ) [MatchedStatement]
+                    ) [Statements]
+                    ReadStmt(
+                      DesignatorArray(
+                        SimpleDesignator(
+                         niz
+                        ) [SimpleDesignator]
+                        SingleExpr(
+                          SingleTerm(
+                            NumConst(
+                             0
+                            ) [NumConst]
+                          ) [SingleTerm]
+                        ) [SingleExpr]
+                      ) [DesignatorArray]
+                    ) [ReadStmt]
+                  ) [Statements]
+                  ReadStmt(
+                    DesignatorArray(
+                      SimpleDesignator(
+                       niz
+                      ) [SimpleDesignator]
+                      SingleExpr(
+                        SingleTerm(
+                          NumConst(
+                           1
+                          ) [NumConst]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                    ) [DesignatorArray]
+                  ) [ReadStmt]
+                ) [Statements]
+                ReadStmt(
+                  DesignatorArray(
+                    SimpleDesignator(
+                     niz
+                    ) [SimpleDesignator]
+                    SingleExpr(
+                      SingleTerm(
+                        NumConst(
+                         2
+                        ) [NumConst]
+                      ) [SingleTerm]
+                    ) [SingleExpr]
+                  ) [DesignatorArray]
+                ) [ReadStmt]
+              ) [Statements]
+              PrintStmt(
+                SingleExpr(
+                  SingleTerm(
+                    Var(
+                      SimpleDesignator(
+                       eol
+                      ) [SimpleDesignator]
+                    ) [Var]
+                  ) [SingleTerm]
+                ) [SingleExpr]
+              ) [PrintStmt]
+            ) [Statements]
+            PrintStmt(
+              SingleExpr(
+                SingleTerm(
+                  FuncCallFactor(
+                    SimpleDesignator(
+                     sum
+                    ) [SimpleDesignator]
+                    Actuals(
+                      ActualParams(
+                        ActualParam(
+                          SingleExpr(
+                            SingleTerm(
+                              FuncCallFactor(
+                                SimpleDesignator(
+                                 sum
+                                ) [SimpleDesignator]
+                                Actuals(
+                                  ActualParams(
+                                    ActualParam(
+                                      SingleExpr(
+                                        SingleTerm(
+                                          Var(
+                                            DesignatorArray(
+                                              SimpleDesignator(
+                                               niz
+                                              ) [SimpleDesignator]
+                                              SingleExpr(
+                                                SingleTerm(
+                                                  NumConst(
+                                                   0
+                                                  ) [NumConst]
+                                                ) [SingleTerm]
+                                              ) [SingleExpr]
+                                            ) [DesignatorArray]
+                                          ) [Var]
+                                        ) [SingleTerm]
+                                      ) [SingleExpr]
+                                    ) [ActualParam]
+                                    SingleExpr(
+                                      SingleTerm(
+                                        Var(
+                                          DesignatorArray(
+                                            SimpleDesignator(
+                                             niz
+                                            ) [SimpleDesignator]
+                                            SingleExpr(
+                                              SingleTerm(
+                                                NumConst(
+                                                 1
+                                                ) [NumConst]
+                                              ) [SingleTerm]
+                                            ) [SingleExpr]
+                                          ) [DesignatorArray]
+                                        ) [Var]
+                                      ) [SingleTerm]
+                                    ) [SingleExpr]
+                                  ) [ActualParams]
+                                ) [Actuals]
+                              ) [FuncCallFactor]
+                            ) [SingleTerm]
+                          ) [SingleExpr]
+                        ) [ActualParam]
+                        SingleExpr(
+                          SingleTerm(
+                            Var(
+                              DesignatorArray(
+                                SimpleDesignator(
+                                 niz
+                                ) [SimpleDesignator]
+                                SingleExpr(
+                                  SingleTerm(
+                                    NumConst(
+                                     2
+                                    ) [NumConst]
+                                  ) [SingleTerm]
+                                ) [SingleExpr]
+                              ) [DesignatorArray]
+                            ) [Var]
+                          ) [SingleTerm]
+                        ) [SingleExpr]
+                      ) [ActualParams]
+                    ) [Actuals]
+                  ) [FuncCallFactor]
+                ) [SingleTerm]
+              ) [SingleExpr]
+            ) [PrintStmt]
+          ) [Statements]
+          PrintStmt(
+            SingleExpr(
+              SingleTerm(
+                Var(
+                  SimpleDesignator(
+                   eol
+                  ) [SimpleDesignator]
+                ) [Var]
+              ) [SingleTerm]
+            ) [SingleExpr]
+          ) [PrintStmt]
+        ) [Statements]
+        PrintStmt(
+          SingleExpr(
+            SingleTerm(
+              FuncCallFactor(
+                SimpleDesignator(
+                 inkrement
+                ) [SimpleDesignator]
+                Actuals(
+                  ActualParams(
+                    ActualParam(
+                      SingleExpr(
+                        SingleTerm(
+                          Var(
+                            DesignatorArray(
+                              SimpleDesignator(
+                               niz
+                              ) [SimpleDesignator]
+                              SingleExpr(
+                                SingleTerm(
+                                  NumConst(
+                                   2
+                                  ) [NumConst]
+                                ) [SingleTerm]
+                              ) [SingleExpr]
+                            ) [DesignatorArray]
+                          ) [Var]
+                        ) [SingleTerm]
+                      ) [SingleExpr]
+                    ) [ActualParam]
+                    SingleExpr(
+                      SingleTerm(
+                        NumConst(
+                         2
+                        ) [NumConst]
+                      ) [SingleTerm]
+                    ) [SingleExpr]
+                  ) [ActualParams]
+                ) [Actuals]
+              ) [FuncCallFactor]
+            ) [SingleTerm]
+          ) [SingleExpr]
+        ) [PrintStmt]
+      ) [Statements]
+    ) [VoidMethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  21:41:43,803 - ===================================
+INFO  21:41:43,806 - Deklarisana konstanta jedan na liniji 5
+INFO  21:41:43,806 - Deklarisana promenljiva i na liniji 7
+INFO  21:41:43,806 - Deklarisana promenljiva ibool na liniji 8
+INFO  21:41:43,806 - Deklarisana niz-promenljiva niz na liniji 10
+INFO  21:41:43,806 - Obradjuje se funkcija sum na liniji 13
+INFO  21:41:43,806 - Deklarisan formalni parametar z na liniji 13
+INFO  21:41:43,806 - Deklarisan formalni parametar d na liniji 13
+INFO  21:41:43,806 - Pronadjena upotreba promenljive z na liniji 15
+INFO  21:41:43,806 - Pronadjena upotreba promenljive d na liniji 15
+INFO  21:41:43,807 - Obradjuje se funkcija inkrement na liniji 18
+INFO  21:41:43,807 - Deklarisan formalni parametar a na liniji 18
+INFO  21:41:43,807 - Deklarisan formalni parametar inc na liniji 18
+INFO  21:41:43,807 - Deklarisana promenljiva pom na liniji 18
+INFO  21:41:43,807 - Pronadjena upotreba promenljive inc na liniji 20
+INFO  21:41:43,807 - Pronadjena upotreba konstante jedan na liniji 20
+INFO  21:41:43,807 - Pronadjena upotreba promenljive pom na liniji 20
+INFO  21:41:43,807 - Pronadjena upotreba promenljive inc na liniji 21
+INFO  21:41:43,807 - Pronadjena upotreba promenljive pom na liniji 21
+INFO  21:41:43,807 - Pronadjena upotreba promenljive a na liniji 21
+INFO  21:41:43,807 - Pronadjena upotreba promenljive a na liniji 23
+INFO  21:41:43,807 - Argument ubacen na stek  na liniji 23
+INFO  21:41:43,807 - Pronadjena upotreba promenljive pom na liniji 23
+INFO  21:41:43,807 - Argument ubacen na stek  na liniji 23
+INFO  21:41:43,807 - Pronadjen poziv funkcije sum na liniji 23
+INFO  21:41:43,853 - Poklapaju se tipovi argumenta i parametra sum na liniji 23
+INFO  21:41:43,853 - Poklapaju se tipovi argumenta i parametra sum na liniji 23
+INFO  21:41:43,853 - Poslednji poziv obradjen sum na liniji 23
+INFO  21:41:43,853 - Obradjuje se funkcija verify na liniji 26
+INFO  21:41:43,853 - Obradjuje se funkcija main na liniji 31
+INFO  21:41:43,853 - Pronadjena upotreba promenljive ibool na liniji 36
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 37
+INFO  21:41:43,853 - Pocela for petlja 
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 38
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 38
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 38
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 40
+INFO  21:41:43,853 - Pronadjena upotreba promenljive ibool na liniji 40
+INFO  21:41:43,853 - Zavrsila for petlja  na liniji 38
+INFO  21:41:43,853 - Pronadjena upotreba promenljive ibool na liniji 43
+INFO  21:41:43,853 - Pronadjena upotreba promenljive i na liniji 44
+INFO  21:41:43,853 - Pronadjena upotreba promenljive niz na liniji 47
+INFO  21:41:43,853 - Pronadjena alokacija niza na liniji 47
+INFO  21:41:43,853 - Pronadjena upotreba promenljive niz na liniji 48
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 48
+INFO  21:41:43,854 - Pronadjena upotreba promenljive niz na liniji 49
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 49
+INFO  21:41:43,854 - Pronadjena upotreba promenljive niz na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive niz na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 50
+INFO  21:41:43,854 - Argument ubacen na stek  na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive niz na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 50
+INFO  21:41:43,854 - Argument ubacen na stek  na liniji 50
+INFO  21:41:43,854 - Pronadjen poziv funkcije sum na liniji 50
+INFO  21:41:43,854 - Poklapaju se tipovi argumenta i parametra sum na liniji 50
+INFO  21:41:43,854 - Poklapaju se tipovi argumenta i parametra sum na liniji 50
+INFO  21:41:43,854 - Poslednji poziv obradjen sum na liniji 50
+INFO  21:41:43,854 - Pronadjena upotreba promenljive niz na liniji 51
+INFO  21:41:43,854 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 51
+INFO  21:41:43,854 - Pronadjen poziv funkcije verify na liniji 51
+INFO  21:41:43,854 - Poslednji poziv obradjen verify na liniji 51
+INFO  21:41:43,854 - Argument ubacen na stek  na liniji 51
+INFO  21:41:43,854 - Pronadjen poziv funkcije ord na liniji 51
+INFO  21:41:43,854 - Poklapaju se tipovi argumenta i parametra ord na liniji 51
+INFO  21:41:43,854 - Poslednji poziv obradjen ord na liniji 51
+INFO  21:41:43,854 - Argument ubacen na stek  na liniji 52
+INFO  21:41:43,854 - Pronadjen poziv funkcije ord na liniji 52
+INFO  21:41:43,854 - Poklapaju se tipovi argumenta i parametra ord na liniji 52
+INFO  21:41:43,854 - Poslednji poziv obradjen ord na liniji 52
+INFO  21:41:43,854 - Pronadjena upotreba konstante eol na liniji 54
+INFO  21:41:43,854 - Pronadjena upotreba promenljive i na liniji 55
+INFO  21:41:43,854 - Pocela for petlja 
+INFO  21:41:43,854 - Pronadjena upotreba promenljive i na liniji 56
+INFO  21:41:43,854 - Pronadjena upotreba promenljive i na liniji 58
+INFO  21:41:43,855 - Pronadjena upotreba promenljive i na liniji 60
+INFO  21:41:43,855 - Pronadjena upotreba promenljive i na liniji 63
+INFO  21:41:43,855 - Pronadjena upotreba promenljive i na liniji 64
+INFO  21:41:43,855 - Pronadjena upotreba promenljive i na liniji 64
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 64
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 64
+INFO  21:41:43,855 - Pronadjen poziv funkcije inkrement na liniji 64
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra inkrement na liniji 64
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra inkrement na liniji 64
+INFO  21:41:43,855 - Poslednji poziv obradjen inkrement na liniji 64
+INFO  21:41:43,855 - Zavrsila for petlja  na liniji 56
+INFO  21:41:43,855 - Pronadjena upotreba promenljive i na liniji 67
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 70
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 70
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 71
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 71
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 72
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 72
+INFO  21:41:43,855 - Pronadjena upotreba konstante eol na liniji 73
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 75
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 75
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 75
+INFO  21:41:43,855 - Pronadjen poziv funkcije sum na liniji 75
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra sum na liniji 75
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra sum na liniji 75
+INFO  21:41:43,855 - Unutrasnji poziv sa 0 argumenata na steku sum na liniji 75
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 75
+INFO  21:41:43,855 - Argument ubacen na stek  na liniji 75
+INFO  21:41:43,855 - Pronadjen poziv funkcije sum na liniji 75
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra sum na liniji 75
+INFO  21:41:43,855 - Poklapaju se tipovi argumenta i parametra sum na liniji 75
+INFO  21:41:43,855 - Poslednji poziv obradjen sum na liniji 75
+INFO  21:41:43,855 - Pronadjena upotreba konstante eol na liniji 77
+INFO  21:41:43,855 - Pronadjena upotreba promenljive niz na liniji 78
+INFO  21:41:43,855 - Pronadjena upotreba promenljive (pristup nizu) niz na liniji 78
+INFO  21:41:43,856 - Argument ubacen na stek  na liniji 78
+INFO  21:41:43,856 - Argument ubacen na stek  na liniji 78
+INFO  21:41:43,856 - Pronadjen poziv funkcije inkrement na liniji 78
+INFO  21:41:43,856 - Poklapaju se tipovi argumenta i parametra inkrement na liniji 78
+INFO  21:41:43,856 - Poklapaju se tipovi argumenta i parametra inkrement na liniji 78
+INFO  21:41:43,856 - Poslednji poziv obradjen inkrement na liniji 78
+INFO  21:41:43,856 - ===================================
+INFO  21:41:43,875 - Parsiranje uspesno zavrseno!

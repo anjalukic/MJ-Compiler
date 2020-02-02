@@ -78,6 +78,9 @@ nonterminal ForT ForT;
 nonterminal IfT IfT;
 nonterminal ElseT ElseT;
 nonterminal RParenT RParenT;
+nonterminal SemiT SemiT;
+nonterminal SemiTT SemiTT;
+nonterminal RParenTT RParenTT;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
@@ -180,7 +183,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 		   	|
 		   	(UnmatchedStatement) IfT:I1 LPAREN Condition:C2 RParenT:R3 Statement:S4 {: RESULT=new UnmatchedStatement(I1, C2, R3, S4); RESULT.setLine(I1left); :}
 		   	|
-		   	(ForStatement) ForT:F1 LPAREN DesignatorStmtOptional:D2 SEMI ConditionOptional:C3 SEMI DesignatorStmtOptional:D4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, D2, C3, D4, S5); RESULT.setLine(F1left); :}
+		   	(ForStatement) ForT:F1 LPAREN DesignatorStmtOptional:D2 SemiT:S3 ConditionOptional:C4 SemiTT:S5 DesignatorStmtOptional:D6 RParenTT:R7 Statement:S8 {: RESULT=new ForStatement(F1, D2, S3, C4, S5, D6, R7, S8); RESULT.setLine(F1left); :}
 		   	|
 		   	(BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 		   	|
@@ -209,6 +212,12 @@ ElseT ::= (ElseT) ELSE {: RESULT=new ElseT(); :};
 ForT ::= (ForT) FOR {: RESULT=new ForT(); :};
 
 RParenT ::= (RParenT) RPAREN {: RESULT=new RParenT(); :};
+
+SemiT ::= (SemiT) SEMI {: RESULT=new SemiT(); :};
+
+SemiTT ::= (SemiTT) SEMI {: RESULT=new SemiTT(); :};
+
+RParenTT ::= (RParenTT) RPAREN {: RESULT=new RParenTT(); :};
 		   
 DesignatorStatement ::= (Assignment) Designator:D1 ASSIGN Expr:E2 {: RESULT=new Assignment(D1, E2); RESULT.setLine(D1left); :}
 					|

@@ -59,7 +59,7 @@ terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, MUL,
 
 nonterminal DeclList, Decl, VarDecl, VarDeclList, ConstDeclList, ConstDecl, VarMulDeclList, MethodDeclList, MethodDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Addop, ActualPars, Relop, ForT, IfT, ElseT, RParenT;
+nonterminal Addop, ActualPars, Relop, ForT, IfT, ElseT, RParenT, SemiT, SemiTT, RParenTT;
 nonterminal DesignatorStatement, Condition, CondTerm, CondFact, Mulop, DesignatorStmtOptional, ConditionOptional;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program, MethodTypeName, MethodVoidName, Designator, ActualParamList;
@@ -156,7 +156,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 		   	|
 		   	(UnmatchedStatement) IfT LPAREN Condition RParenT Statement
 		   	|
-		   	(ForStatement) ForT LPAREN DesignatorStmtOptional SEMI ConditionOptional SEMI DesignatorStmtOptional RPAREN Statement
+		   	(ForStatement) ForT LPAREN DesignatorStmtOptional SemiT ConditionOptional SemiTT DesignatorStmtOptional RParenTT Statement
 		   	|
 		   	(BreakStatement) BREAK SEMI
 		   	|
@@ -185,6 +185,12 @@ ElseT ::= (ElseT) ELSE;
 ForT ::= (ForT) FOR;
 
 RParenT ::= (RParenT) RPAREN;
+
+SemiT ::= (SemiT) SEMI;
+
+SemiTT ::= (SemiTT) SEMI;
+
+RParenTT ::= (RParenTT) RPAREN;
 		   
 DesignatorStatement ::= (Assignment) Designator ASSIGN Expr
 					|
