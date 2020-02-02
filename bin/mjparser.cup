@@ -295,8 +295,9 @@ Factor ::= (Var) Designator:d
 					
 Designator ::= (SimpleDesignator) IDENT:DesignatorName
 			|
-			(DesignatorArray) IDENT:DesignatorName LBRACKET Expr:Index RBRACKET
+			(DesignatorArray) Designator LBRACKET Expr:Index RBRACKET
 			;
+
 
 Relop ::= (EqualOp) EQUAL:EqualString
 		| (DifferentOp) DIFF:DiffString

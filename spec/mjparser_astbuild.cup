@@ -316,8 +316,9 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
 					
 Designator ::= (SimpleDesignator) IDENT:DesignatorName {: RESULT=new SimpleDesignator(DesignatorName); RESULT.setLine(DesignatorNameleft); :}
 			|
-			(DesignatorArray) IDENT:DesignatorName LBRACKET Expr:Index RBRACKET {: RESULT=new DesignatorArray(DesignatorName, Index); RESULT.setLine(DesignatorNameleft); :}
+			(DesignatorArray) Designator:D1 LBRACKET Expr:Index RBRACKET {: RESULT=new DesignatorArray(D1, Index); RESULT.setLine(D1left); :}
 			;
+
 
 Relop ::= (EqualOp) EQUAL:EqualString {: RESULT=new EqualOp(EqualString); RESULT.setLine(EqualStringleft); :}
 		| (DifferentOp) DIFF:DiffString {: RESULT=new DifferentOp(DiffString); RESULT.setLine(DiffStringleft); :}

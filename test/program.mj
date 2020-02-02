@@ -1,41 +1,25 @@
 program MJProgram
-	int a, b;
-	const int d = 3;
-	int niz[];
+int niz[];
 {
-		
-	int leng( int a[]){
-		return 3;
-	}
-	int k (int i, char j) int c; {
-		c = 1;
+	int k() int c;{
+		c = 2;
 		return c+2;
 	}
+	void main() int x,y; {
+		x=3;
+		print(x);
+		niz = new int[5];
+		print(len(niz));
+		chr(3);
+		ord('a');
+		y=2*x;
+		print(y);
 	
-	void main() int i; int a; char x;  bool y;{
-		for ( i =0; x == 'a';i++) {
-			if (i<2) a++;
-			break;
-			continue;
-			for (;;){
-				break;
-			}
-	
-		}
-		a=1;
-		if (a>3) a++; else a--;
-		if (a>2)
-			if (a<3) a++;
-			else a=k(k(len(niz),'b'),'b')*d*3/(b+1);
-			k(k(2,'d'),'z');
-		x = 'a';
-		y = false;
-		niz[3] = len(niz);
-		niz = new int[a];
-		b = niz[2];
-		len(niz);
-		print(5);
-		read(a);
 		
+		print(k());
+		x++;
+		print(x);
+		
+		return;
 	}
 }

@@ -144,27 +144,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorArray designator) {
-		Obj obj = TabExt.find(designator.getDesignatorName());
+		Obj obj = TabExt.find(designator.getDesignator().obj.getName());
 		if (obj == TabExt.noObj) {
-			report_error("Greska na liniji " + designator.getLine() + " : ime " + designator.getDesignatorName()
+			report_error("Greska na liniji " + designator.getDesignator().getLine() + " : ime " + designator.getDesignator().obj.getName()
 					+ " nije deklarisano! ", null);
 			designator.obj = obj;
 		} else {
 			if (obj.getType().getKind() != Struct.Array) {
-				report_error("Greska na liniji " + designator.getLine() + " : promenljiva "
-						+ designator.getDesignatorName() + " nije niz! ", null);
+				report_error("Greska na liniji " + designator.getDesignator().getLine() + " : promenljiva "
+						+ designator.getDesignator().obj.getName() + " nije niz! ", null);
 				designator.obj = obj;
 			} else {
 				if (designator.getExpr().struct != TabExt.intType) {
 					report_error("Greska na liniji " + designator.getLine() + " : indeks u promenljivoj "
-							+ designator.getDesignatorName() + " nije int tipa! ", null);
+							+ designator.getDesignator().obj.getName() + " nije int tipa! ", null);
 					designator.obj = obj;
 				} else {
-					report_info("Pronadjena upotreba promenljive (pristup nizu) " + designator.getDesignatorName()
+					report_info("Pronadjena upotreba promenljive (pristup nizu) " + designator.getDesignator().obj.getName()
 							+ " na liniji " + designator.getLine(), null);
 					designator.obj = TabExt.insert(Obj.Elem,
-							designator.getDesignatorName() + "[" + designator.getLine() + "]",
-							obj.getType().getElemType());// vrednost indeksa?
+							designator.getDesignator().obj.getName() + "[$]",
+							obj.getType().getElemType());// stavljati u tabelu simbola?
 				}
 			}
 		}
@@ -187,14 +187,36 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			} else {
 				Collection<Obj> locals = func.getLocalSymbols();
 				if (!locals.isEmpty() && nFuncArgs > 0) {
-					if (func.getName() == "len") {
-						Struct arg = actualPars.pop();
-						if (arg.getKind() != Struct.Array) {
-							report_error("Greska na liniji " + funcCall.getLine()
-									+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
-						} else {
-							report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
-									+ funcCall.getLine(), null);
+					if (func.getName() == "len" || func.getName() == "ord" || func.getName() == "chr") {
+						if (func.getName() == "len") {
+							Struct arg = actualPars.pop();
+							if (arg.getKind() != Struct.Array) {
+								report_error("Greska na liniji " + funcCall.getLine()
+										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
+							} else {
+								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
+										+ funcCall.getLine(), null);
+							}
+						}
+						if (func.getName() == "chr") {
+							Struct arg = actualPars.pop();
+							if (arg.getKind() != Struct.Int) {
+								report_error("Greska na liniji " + funcCall.getLine()
+										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
+							} else {
+								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
+										+ funcCall.getLine(), null);
+							}
+						}
+						if (func.getName() == "ord") {
+							Struct arg = actualPars.pop();
+							if (arg.getKind() != Struct.Char) {
+								report_error("Greska na liniji " + funcCall.getLine()
+										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
+							} else {
+								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
+										+ funcCall.getLine(), null);
+							}
 						}
 					}
 					else {
@@ -441,6 +463,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 		Obj varNode = TabExt.insert(Obj.Con, cnstDecl.getConstName(), currType);
+		varNode.setAdr(cnstDecl.getN1());///////////
 	}
 
 	public void visit(ConstDeclBool cnstDecl) {
@@ -457,6 +480,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 		Obj varNode = TabExt.insert(Obj.Con, cnstDecl.getConstName(), currType);
+		int boolVal = cnstDecl.getB1().equals("true")?1:0;/////////////////////
+		varNode.setAdr(boolVal);///////////////
 	}
 
 	public void visit(ConstDeclChar cnstDecl) {
@@ -473,6 +498,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 		Obj varNode = TabExt.insert(Obj.Con, cnstDecl.getConstName(), currType);
+		varNode.setAdr(cnstDecl.getC1());////////////
 	}
 
 	public void visit(FormalParamDeclNoBrackets fp) {
