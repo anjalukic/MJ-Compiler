@@ -49,21 +49,23 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, SEMI, CONST, LBRACKET, RBRACKET, LPAREN, RPAREN, RETURN, PLUS, MINUS, COMMA, PRINT, VOID;
+terminal PROG, LBRACE, RBRACE, SEMI, CONST, LBRACKET, RBRACKET, LPAREN, RPAREN, FOREACH, COLON, RETURN, PLUS, MINUS, COMMA, PRINT, VOID;
 terminal Integer NUMCONST;
 terminal Character CHARCONST;
 terminal String BOOLCONST;
 terminal String IDENT;
 terminal String EQUAL, DIFF, GT, LT, GTE, LTE;
-terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, MUL, DIV, MOD, DOT, FOR;
+terminal IF, ELSE, ASSIGN, BREAK, CONTINUE, READ, INCR, DECR, OR, AND, NEW, MUL, DIV, MOD, DOT, FOR, ADDASSIGN, SUBASSIGN, MULASSIGN, DIVASSIGN, MODASSIGN;
 
 nonterminal DeclList, Decl, VarDecl, VarDeclList, ConstDeclList, ConstDecl, VarMulDeclList, MethodDeclList, MethodDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Addop, ActualPars, Relop, ForT, IfT, ElseT, RParenT, SemiT, SemiTT, RParenTT;
+nonterminal Addop, ActualPars, Relop, ForT, IfT, ElseT, RParenT, SemiT, SemiTT, OrT;
 nonterminal DesignatorStatement, Condition, CondTerm, CondFact, Mulop, DesignatorStmtOptional, ConditionOptional;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program, MethodTypeName, MethodVoidName, Designator, ActualParamList;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Factor, Term, Expr, NegTerm;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program, MethodTypeName, MethodVoidName, Designator, ActualParamList, RParenTT, ForEachT;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Factor, Term, Expr, NegTerm, Assignment;
+
+nonterminal AssignOp;
 
 precedence left ELSE;
 
@@ -174,6 +176,8 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 		   |
 		   (BlockOfStmts) LBRACE StatementList RBRACE
 		   |
+		   (ForEachStatement) ForEachT LPAREN IDENT:iterName COLON Designator RParenTT Statement
+		   |
 		    (ErrorStmt) error SEMI:l
 		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
 		   ;
@@ -191,8 +195,10 @@ SemiT ::= (SemiT) SEMI;
 SemiTT ::= (SemiTT) SEMI;
 
 RParenTT ::= (RParenTT) RPAREN;
+
+ForEachT ::= (ForEachT) FOREACH;
 		   
-DesignatorStatement ::= (Assignment) Designator ASSIGN Expr
+DesignatorStatement ::= (DesignatorAssignment) Assignment
 					|
 					(FunctionCallStmt) Designator LPAREN ActualPars RPAREN
 					|
@@ -200,6 +206,24 @@ DesignatorStatement ::= (Assignment) Designator ASSIGN Expr
 					|
 					(Decrement) Designator DECR
 					;
+					
+Assignment ::= (EndAssignment) Designator AssignOp Expr
+				| 
+				(MidAssignment) Designator AssignOp Assignment
+				;
+				
+AssignOp ::= (EqualAssign) ASSIGN
+			|
+			(AddAssign) ADDASSIGN
+			|
+			(SubAssign) SUBASSIGN
+			|
+			(DivAssign) DIVASSIGN
+			|
+			(MulAssign) MULASSIGN
+			|
+			(ModAssign) MODASSIGN
+			;
 					
 DesignatorStmtOptional ::= (OneDesignatorStmt) DesignatorStatement
 							| (NoDesignatorStmt) /*epsilon*/
@@ -215,10 +239,12 @@ ActualParamList ::= (ActualParams) ActualParamList COMMA Expr
 				(ActualParam) Expr
 				;
 				
-Condition ::= (MultipleConditionsOR) Condition OR CondTerm
+Condition ::= (MultipleConditionsOR) Condition OrT CondTerm
 			|
 			(SingleCondition) CondTerm
 			;
+			
+OrT ::= (OrT) OR;
 			
 ConditionOptional ::= (OptionalCondition) Condition
 							| (NoCondition) /*epsilon*/

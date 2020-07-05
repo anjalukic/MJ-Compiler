@@ -1,0 +1,34 @@
+program MJProgram
+{	//ispis: element:3 element:5 element:4 12
+	void main() char element[]; int niz[]; int a,i; char iter;
+	{
+		element = new char[7];
+		element[0] = 'e';
+		element[1] = 'l';
+		element[2] = 'e';
+		element[3] = 'm';
+		element[4] = 'e';
+		element[5] = 'n';
+		element[6] = 't';
+		
+		niz = new int[3];
+		niz[0]=3;
+		niz[1]=5;
+		niz[2]=4;
+		
+		foreach (a: niz){
+			foreach(iter:element){
+				print(iter);
+			}
+			print(':');
+			print(a);
+			print(eol);
+		}
+		
+		a=0;
+		for( i=0; i<len(niz); i++){
+			a+=niz[i];
+		}
+		print(a);
+	}
+}

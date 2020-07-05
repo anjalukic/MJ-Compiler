@@ -25,7 +25,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	int nVars;
 	Stack<Struct> actualPars = new Stack<Struct>();
 	Stack<Integer> actualParsNum = new Stack<Integer>();
+	Stack<Obj> forEachIterators = new Stack<Obj>();
 	int forLevel = 0;
+	int forEachId = 0;
 	Logger log = Logger.getLogger(getClass());
 
 	// --------------------------LOG----------------------------------
@@ -127,9 +129,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (obj.getKind() == Obj.Con)
 				report_info("Pronadjena upotreba konstante " + designator.getDesignatorName() + " na liniji "
 						+ designator.getLine(), null);
-			else if (obj.getKind() == Obj.Var)
+			else if (obj.getKind() == Obj.Var) {
+				if (forEachIterators.contains(obj) && 
+						(designator.getParent() instanceof DesignatorStatement || designator.getParent() instanceof ReadStmt || designator.getParent() instanceof Assignment)) {
+					report_error("Greska na liniji " + designator.getLine() + " : nedozvoljen upis u promenljivu " + designator.getDesignatorName()
+					+ " unutar foreach petlje! ", null);
+				} else
 				report_info("Pronadjena upotreba promenljive " + designator.getDesignatorName() + " na liniji "
 						+ designator.getLine(), null);
+			}
 			else {
 				if (obj.getKind() == Obj.Meth) {
 					if (inFuncCall) {
@@ -146,8 +154,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(DesignatorArray designator) {
 		Obj obj = TabExt.find(designator.getDesignator().obj.getName());
 		if (obj == TabExt.noObj) {
-			report_error("Greska na liniji " + designator.getDesignator().getLine() + " : ime " + designator.getDesignator().obj.getName()
-					+ " nije deklarisano! ", null);
+			report_error("Greska na liniji " + designator.getDesignator().getLine() + " : ime "
+					+ designator.getDesignator().obj.getName() + " nije deklarisano! ", null);
 			designator.obj = obj;
 		} else {
 			if (obj.getType().getKind() != Struct.Array) {
@@ -160,10 +168,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 							+ designator.getDesignator().obj.getName() + " nije int tipa! ", null);
 					designator.obj = obj;
 				} else {
-					report_info("Pronadjena upotreba promenljive (pristup nizu) " + designator.getDesignator().obj.getName()
-							+ " na liniji " + designator.getLine(), null);
-					designator.obj = TabExt.insert(Obj.Elem,
-							designator.getDesignator().obj.getName() + "[$]",
+					report_info("Pronadjena upotreba promenljive (pristup nizu) "
+							+ designator.getDesignator().obj.getName() + " na liniji " + designator.getLine(), null);
+					designator.obj = TabExt.insert(Obj.Elem, designator.getDesignator().obj.getName() + "[$]",
 							obj.getType().getElemType());// stavljati u tabelu simbola?
 				}
 			}
@@ -187,39 +194,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			} else {
 				Collection<Obj> locals = func.getLocalSymbols();
 				if (!locals.isEmpty() && nFuncArgs > 0) {
-					if (func.getName() == "len" || func.getName() == "ord" || func.getName() == "chr") {
-						if (func.getName() == "len") {
-							Struct arg = actualPars.pop();
-							if (arg.getKind() != Struct.Array) {
-								report_error("Greska na liniji " + funcCall.getLine()
-										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
-							} else {
-								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
-										+ funcCall.getLine(), null);
-							}
+					if (func.getName() == "len") {
+						Struct arg = actualPars.pop();
+						if (arg.getKind() != Struct.Array) {
+							report_error("Greska na liniji " + funcCall.getLine()
+									+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
+						} else {
+							report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
+									+ funcCall.getLine(), null);
 						}
-						if (func.getName() == "chr") {
-							Struct arg = actualPars.pop();
-							if (arg.getKind() != Struct.Int) {
-								report_error("Greska na liniji " + funcCall.getLine()
-										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
-							} else {
-								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
-										+ funcCall.getLine(), null);
-							}
-						}
-						if (func.getName() == "ord") {
-							Struct arg = actualPars.pop();
-							if (arg.getKind() != Struct.Char) {
-								report_error("Greska na liniji " + funcCall.getLine()
-										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
-							} else {
-								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
-										+ funcCall.getLine(), null);
-							}
-						}
-					}
-					else {
+					} else {
 						ArrayList<Obj> params = new ArrayList<Obj>();
 						locals.forEach(i -> params.add(i));
 						ListIterator<Obj> iter = params.listIterator(nFuncArgs);
@@ -230,9 +214,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 								report_error("Greska na liniji " + funcCall.getLine()
 										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
 							} else {
-								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
-										+ funcCall.getLine(), null);
-	
+								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName()
+										+ " na liniji " + funcCall.getLine(), null);
+
 							}
 						}
 					}
@@ -334,9 +318,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(ReturnExpr returnExpr) {
-		if (currentMethod==null) {
-			report_error("Greska na liniji " + returnExpr.getLine() + " : "
-					+ "return van funkcije", null);
+		if (currentMethod == null) {
+			report_error("Greska na liniji " + returnExpr.getLine() + " : " + "return van funkcije", null);
 		} else {
 			returnFound = true;
 			Struct currMethType = currentMethod.getType();
@@ -349,9 +332,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(ReturnNoExpr ret) {
-		if (currentMethod==null) {
-			report_error("Greska na liniji " + ret.getLine() + " : "
-					+ "return van funkcije", null);
+		if (currentMethod == null) {
+			report_error("Greska na liniji " + ret.getLine() + " : " + "return van funkcije", null);
 		} else {
 			Struct currMethType = currentMethod.getType();
 			if (currMethType != TabExt.noType) {
@@ -362,29 +344,46 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 
-	public void visit(Assignment assignment) {
-		if (!assignment.getExpr().struct.assignableTo(assignment.getDesignator().obj.getType()))
+	public void visit(EndAssignment assignment) {
+		if (!assignment.getExpr().struct.assignableTo(assignment.getDesignator().obj.getType())) {
 			report_error(
 					"Greska na liniji " + assignment.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ",
 					null);
+		} else if (!(assignment.getAssignOp() instanceof EqualAssign)
+				&& assignment.getExpr().struct != TabExt.intType) {
+			report_error("Greska na liniji " + assignment.getLine() + " : "
+					+ "kombinovani operatori mogu se koristiti samo za int tip! ", null);
+		}
+		assignment.struct = assignment.getExpr().struct;
+	}
+
+	public void visit(MidAssignment assignment) {
+		if (!assignment.getAssignment().struct.assignableTo(assignment.getDesignator().obj.getType())) {
+			report_error(
+					"Greska na liniji " + assignment.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ",
+					null);
+		}
+		assignment.struct=assignment.getAssignment().struct;
 	}
 
 	public void visit(FunctionCallStmt funcCall) {
 		Obj func = funcCall.getDesignator().obj;
-    	if(Obj.Meth == func.getKind()){
+		if (Obj.Meth == func.getKind()) {
 			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + funcCall.getLine(), null);
-			
-			//provera argumenata
+
+			// provera argumenata
 			int nFuncPars = func.getLevel();
 			int nFuncArgs = nArgs;
-			if (nFuncArgs!=nFuncPars) {
-    			report_error("Greska na liniji " + funcCall.getLine()+ " : pogresan broj argumenata u funkciji "+func.getName(), null);
-    			for (int i=0; i<nFuncArgs; i++) actualPars.pop();
-			} else { 			
+			if (nFuncArgs != nFuncPars) {
+				report_error("Greska na liniji " + funcCall.getLine() + " : pogresan broj argumenata u funkciji "
+						+ func.getName(), null);
+				for (int i = 0; i < nFuncArgs; i++)
+					actualPars.pop();
+			} else {
 				Collection<Obj> locals = func.getLocalSymbols();
 				// provera tipa argumenata i parametara fje
-				if (!locals.isEmpty() && nFuncArgs>0) {
-					if (func.getName() == "len"){
+				if (!locals.isEmpty() && nFuncArgs > 0) {
+					if (func.getName() == "len") {
 						Struct arg = actualPars.pop();
 						if (arg.getKind() != Struct.Array) {
 							report_error("Greska na liniji " + funcCall.getLine()
@@ -393,8 +392,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 							report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji "
 									+ funcCall.getLine(), null);
 						}
-					}
-					else {
+					} else {
 						ArrayList<Obj> params = new ArrayList<Obj>();
 						locals.forEach(i -> params.add(i));
 						ListIterator<Obj> iter = params.listIterator(nFuncArgs);
@@ -402,10 +400,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 							Struct arg = actualPars.pop();
 							Obj param = iter.previous();
 							if (!param.getType().compatibleWith(arg)) {
-								report_error("Greska na liniji " + funcCall.getLine()+ " : argument pogresnog tipa u funkciji "+func.getName(), null);
+								report_error("Greska na liniji " + funcCall.getLine()
+										+ " : argument pogresnog tipa u funkciji " + func.getName(), null);
 							} else {
-								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName() + " na liniji " + funcCall.getLine(), null);
-		
+								report_info("Poklapaju se tipovi argumenta i parametra " + func.getName()
+										+ " na liniji " + funcCall.getLine(), null);
+
 							}
 						}
 					}
@@ -413,10 +413,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 			inFuncCall = false;
 			nArgs = 0;
-			report_info("Naredba poziva funkcije " + func.getName() + " obradjena na liniji " + funcCall.getLine(), null);
-    	}else{
-			report_error("Greska na liniji " + funcCall.getLine()+" : ime " + func.getName() + " nije funkcija!", null);
-    	}
+			report_info("Naredba poziva funkcije " + func.getName() + " obradjena na liniji " + funcCall.getLine(),
+					null);
+		} else {
+			report_error("Greska na liniji " + funcCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
+					null);
+		}
 	}
 
 	public void visit(Increment incr) {
@@ -463,7 +465,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 		Obj varNode = TabExt.insert(Obj.Con, cnstDecl.getConstName(), currType);
-		varNode.setAdr(cnstDecl.getN1());///////////
+		varNode.setAdr(cnstDecl.getN1());
 	}
 
 	public void visit(ConstDeclBool cnstDecl) {
@@ -480,7 +482,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 		Obj varNode = TabExt.insert(Obj.Con, cnstDecl.getConstName(), currType);
-		int boolVal = cnstDecl.getB1().equals("true")?1:0;/////////////////////
+		int boolVal = cnstDecl.getB1().equals("true") ? 1 : 0;/////////////////////
 		varNode.setAdr(boolVal);///////////////
 	}
 
@@ -514,19 +516,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	public void visit(RelCondFact cond) {
-		if (cond.getRelop() instanceof EqualOp || cond.getRelop() instanceof DifferentOp) {
+		if (cond.getRelop() instanceof EqualOp || cond.getRelop() instanceof DifferentOp) {// equal i different moze i
+																							// char, bool
 			if (!cond.getExpr().struct.equals(cond.getExpr1().struct))
 				report_error(
 						"Greska na liniji " + cond.getLine() + " : " + "nekompatibilni tipovi u uslovu for petlje! ",
 						null);
 		} else {
-			if (!(cond.getExpr().struct.equals(cond.getExpr1().struct) && cond.getExpr().struct == TabExt.intType))// equal
-																													// i
-																													// different
-																													// moze
-																													// i
-																													// char,
-																													// bool
+			if (!(cond.getExpr().struct.equals(cond.getExpr1().struct) && cond.getExpr().struct == TabExt.intType))
 				report_error(
 						"Greska na liniji " + cond.getLine() + " : " + "nekompatibilni tipovi u uslovu for petlje! ",
 						null);
@@ -542,20 +539,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		report_info("Zavrsila for petlja ", fs);
 		forLevel--;
 	}
-	
+
 	public void visit(ForT fort) {
 		forLevel++;
 		report_info("Pocela for petlja ", fort);
 	}
-	
+
 	public void visit(BreakStatement bs) {
-		if (forLevel<=0) {
+		if (forLevel <= 0) {
 			report_error("Greska : break van for petlje! ", null);
 		}
 	}
-	
+
 	public void visit(ContinueStatement bs) {
-		if (forLevel<=0) {
+		if (forLevel <= 0) {
 			report_error("Greska : continue van for petlje! ", null);
 		}
 	}
@@ -573,18 +570,45 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		nArgs++;
 
 	}
-	
+
 	public void visit(PrintStmt ps) {
-		if (!(ps.getExpr().struct==TabExt.intType || 
-				ps.getExpr().struct==TabExt.boolType || ps.getExpr().struct==TabExt.charType)) {
+		if (!(ps.getExpr().struct == TabExt.intType || ps.getExpr().struct == TabExt.boolType
+				|| ps.getExpr().struct == TabExt.charType)) {
 			report_error("Greska na liniji " + ps.getLine() + " : neodgovarajuci tip za print! ", null);
 		}
 	}
-	
+
 	public void visit(ReadStmt ps) {
-		if (!(ps.getDesignator().obj.getType()==TabExt.intType || 
-				ps.getDesignator().obj.getType()==TabExt.boolType ||ps.getDesignator().obj.getType()==TabExt.charType)) {
+		if (!(ps.getDesignator().obj.getType() == TabExt.intType || ps.getDesignator().obj.getType() == TabExt.boolType
+				|| ps.getDesignator().obj.getType() == TabExt.charType)) {
 			report_error("Greska na liniji " + ps.getLine() + " : neodgovarajuci tip za read! ", null);
+		}
+	}
+	
+	public void visit(ForEachT fe) {
+		Obj iter = TabExt.find(((ForEachStatement)fe.getParent()).getIterName());
+		if (iter == TabExt.noObj) {
+			report_error("Greska : ime " + ((ForEachStatement)fe.getParent()).getIterName()
+					+ " nije deklarisano! ", null);
+		}
+		forEachIterators.push(iter);
+		fe.obj = iter;
+	}
+	
+	public void visit(ForEachStatement fes) {
+		if (fes.getDesignator().obj.getType().getKind() != Struct.Array) {
+			report_error("Greska na liniji " + fes.getLine() + " : u foreach petlji tip mora biti niz! ", null);
+		}
+		Obj iter = forEachIterators.pop();
+		if (iter.getType() != fes.getDesignator().obj.getType().getElemType()) {
+			report_error("Greska na liniji " + fes.getLine() + " : iterator mora biti istog tipa kao i elementi niza u foreach petlji! ", null);
+		}
+	}
+	
+	public void visit(RParenTT rp) {
+		if (rp.getParent() instanceof ForEachStatement) {
+			rp.obj = TabExt.insert(Obj.Var,"ForEachIndex"+forEachId,TabExt.intType);
+			forEachId++;
 		}
 	}
 

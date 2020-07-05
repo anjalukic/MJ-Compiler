@@ -1,5 +1,7 @@
 //Test 302
-
+//ispis : 0 1 ord('A') -4 
+//upis : 3 4 5
+//ispis: 12 3 4 5 10
 program test302
 
 const int jedan = 1;
@@ -73,6 +75,10 @@ int niz[];
 		print(eol);
 		
 		print(sum (sum(niz[0], niz[1]), niz[2])); 
+		
+		foreach(i: niz){
+			print(i);
+		}
 			
 		print(eol); 
 		print(inkrement(niz[2], 2));

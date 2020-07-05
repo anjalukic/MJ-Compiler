@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2020 21:38:30
+// 22/5/2020 16:56:38
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,12 +20,14 @@ public interface Visitor {
     public void visit(Condition Condition);
     public void visit(VarMulDeclList VarMulDeclList);
     public void visit(ConstDeclList ConstDeclList);
+    public void visit(AssignOp AssignOp);
     public void visit(ActualParamList ActualParamList);
     public void visit(VarDeclList VarDeclList);
     public void visit(FormalParamList FormalParamList);
     public void visit(Expr Expr);
     public void visit(DesignatorStmtOptional DesignatorStmtOptional);
     public void visit(DesignatorStatement DesignatorStatement);
+    public void visit(Assignment Assignment);
     public void visit(ActualPars ActualPars);
     public void visit(Decl Decl);
     public void visit(Statement Statement);
@@ -68,6 +70,7 @@ public interface Visitor {
     public void visit(ErrorCondition ErrorCondition);
     public void visit(NoCondition NoCondition);
     public void visit(OptionalCondition OptionalCondition);
+    public void visit(OrT OrT);
     public void visit(SingleCondition SingleCondition);
     public void visit(MultipleConditionsOR MultipleConditionsOR);
     public void visit(ActualParam ActualParam);
@@ -76,10 +79,19 @@ public interface Visitor {
     public void visit(Actuals Actuals);
     public void visit(NoDesignatorStmt NoDesignatorStmt);
     public void visit(OneDesignatorStmt OneDesignatorStmt);
+    public void visit(ModAssign ModAssign);
+    public void visit(MulAssign MulAssign);
+    public void visit(DivAssign DivAssign);
+    public void visit(SubAssign SubAssign);
+    public void visit(AddAssign AddAssign);
+    public void visit(EqualAssign EqualAssign);
+    public void visit(MidAssignment MidAssignment);
+    public void visit(EndAssignment EndAssignment);
     public void visit(Decrement Decrement);
     public void visit(Increment Increment);
     public void visit(FunctionCallStmt FunctionCallStmt);
-    public void visit(Assignment Assignment);
+    public void visit(DesignatorAssignment DesignatorAssignment);
+    public void visit(ForEachT ForEachT);
     public void visit(RParenTT RParenTT);
     public void visit(SemiTT SemiTT);
     public void visit(SemiT SemiT);
@@ -88,6 +100,7 @@ public interface Visitor {
     public void visit(ElseT ElseT);
     public void visit(IfT IfT);
     public void visit(ErrorStmt ErrorStmt);
+    public void visit(ForEachStatement ForEachStatement);
     public void visit(BlockOfStmts BlockOfStmts);
     public void visit(PrintStmtArg PrintStmtArg);
     public void visit(PrintStmt PrintStmt);

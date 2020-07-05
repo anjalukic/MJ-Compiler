@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2020 21:38:30
+// 22/5/2020 16:56:38
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,12 +20,14 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Condition Condition) { }
     public void visit(VarMulDeclList VarMulDeclList) { }
     public void visit(ConstDeclList ConstDeclList) { }
+    public void visit(AssignOp AssignOp) { }
     public void visit(ActualParamList ActualParamList) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(FormalParamList FormalParamList) { }
     public void visit(Expr Expr) { }
     public void visit(DesignatorStmtOptional DesignatorStmtOptional) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
+    public void visit(Assignment Assignment) { }
     public void visit(ActualPars ActualPars) { }
     public void visit(Decl Decl) { }
     public void visit(Statement Statement) { }
@@ -68,6 +70,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ErrorCondition ErrorCondition) { visit(); }
     public void visit(NoCondition NoCondition) { visit(); }
     public void visit(OptionalCondition OptionalCondition) { visit(); }
+    public void visit(OrT OrT) { visit(); }
     public void visit(SingleCondition SingleCondition) { visit(); }
     public void visit(MultipleConditionsOR MultipleConditionsOR) { visit(); }
     public void visit(ActualParam ActualParam) { visit(); }
@@ -76,10 +79,19 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Actuals Actuals) { visit(); }
     public void visit(NoDesignatorStmt NoDesignatorStmt) { visit(); }
     public void visit(OneDesignatorStmt OneDesignatorStmt) { visit(); }
+    public void visit(ModAssign ModAssign) { visit(); }
+    public void visit(MulAssign MulAssign) { visit(); }
+    public void visit(DivAssign DivAssign) { visit(); }
+    public void visit(SubAssign SubAssign) { visit(); }
+    public void visit(AddAssign AddAssign) { visit(); }
+    public void visit(EqualAssign EqualAssign) { visit(); }
+    public void visit(MidAssignment MidAssignment) { visit(); }
+    public void visit(EndAssignment EndAssignment) { visit(); }
     public void visit(Decrement Decrement) { visit(); }
     public void visit(Increment Increment) { visit(); }
     public void visit(FunctionCallStmt FunctionCallStmt) { visit(); }
-    public void visit(Assignment Assignment) { visit(); }
+    public void visit(DesignatorAssignment DesignatorAssignment) { visit(); }
+    public void visit(ForEachT ForEachT) { visit(); }
     public void visit(RParenTT RParenTT) { visit(); }
     public void visit(SemiTT SemiTT) { visit(); }
     public void visit(SemiT SemiT) { visit(); }
@@ -88,6 +100,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ElseT ElseT) { visit(); }
     public void visit(IfT IfT) { visit(); }
     public void visit(ErrorStmt ErrorStmt) { visit(); }
+    public void visit(ForEachStatement ForEachStatement) { visit(); }
     public void visit(BlockOfStmts BlockOfStmts) { visit(); }
     public void visit(PrintStmtArg PrintStmtArg) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }

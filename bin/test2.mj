@@ -1,0 +1,28 @@
+program MJProgram
+{	//suma= 14
+	void main() int a,sum; int pos[]; char string[]; char temp;
+	{
+		sum=0;
+		
+		pos = new int[3];
+		pos[0]=5;
+		pos[1]=7;
+		pos[2]=2;
+		
+		string= new char[6];
+		string[0]='s';
+		string[1]='u';
+		string[2]='m';
+		string[3]='a';
+		string[4]='=';
+		string[5]=' ';
+		
+		foreach (temp:string) print(temp);
+		
+		foreach (a:pos){
+			sum+=a;
+		}
+		print(sum);
+
+	}
+}

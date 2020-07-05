@@ -28,10 +28,9 @@ public class MJParserTest {
 	public static void main(String[] args) throws Exception {
 		
 		Logger log = Logger.getLogger(MJParserTest.class);
-		
 		Reader br = null;
 		try {
-			File sourceCode = new File("test/program.mj");
+			File sourceCode = new File(args[0]);
 			log.info("Compiling source file: " + sourceCode.getAbsolutePath());
 			
 			br = new BufferedReader(new FileReader(sourceCode));

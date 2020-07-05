@@ -37,17 +37,18 @@ import java_cup.runtime.Symbol;
 "\f" 	{ }
 
 "program"   { return new_symbol(sym.PROG, yytext()); }
-"break"   { return new_symbol(sym.BREAK, yytext()); }
-"else"   { return new_symbol(sym.ELSE, yytext()); }
-"const"   { return new_symbol(sym.CONST, yytext()); }
-"if"   { return new_symbol(sym.IF, yytext()); }
+"break"   	{ return new_symbol(sym.BREAK, yytext()); }
+"else"   	{ return new_symbol(sym.ELSE, yytext()); }
+"const"  	{ return new_symbol(sym.CONST, yytext()); }
+"if"   		{ return new_symbol(sym.IF, yytext()); }
 "print" 	{ return new_symbol(sym.PRINT, yytext()); }
-"read"   { return new_symbol(sym.READ, yytext()); }
+"read"   	{ return new_symbol(sym.READ, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
-"for"   { return new_symbol(sym.FOR, yytext()); }
-"continue" 		{ return new_symbol(sym.CONTINUE, yytext()); }
+"for"   	{ return new_symbol(sym.FOR, yytext()); }
+"continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
 "new" 		{ return new_symbol(sym.NEW, yytext()); }
+"foreach"   { return new_symbol(sym.FOREACH, yytext()); }
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
 "-" 		{ return new_symbol(sym.MINUS, yytext()); }
 "*" 		{ return new_symbol(sym.MUL, yytext()); }
@@ -62,6 +63,11 @@ import java_cup.runtime.Symbol;
 "&&" 		{ return new_symbol(sym.AND, yytext()); }
 "||" 		{ return new_symbol(sym.OR, yytext()); }
 "=" 		{ return new_symbol(sym.ASSIGN, yytext()); }
+"+=" 		{ return new_symbol(sym.ADDASSIGN, yytext()); }
+"-=" 		{ return new_symbol(sym.SUBASSIGN, yytext()); }
+"*=" 		{ return new_symbol(sym.MULASSIGN, yytext()); }
+"/=" 		{ return new_symbol(sym.DIVASSIGN, yytext()); }
+"%=" 		{ return new_symbol(sym.MODASSIGN, yytext()); }
 "++" 		{ return new_symbol(sym.INCR, yytext()); }
 "--" 		{ return new_symbol(sym.DECR, yytext()); }
 ";" 		{ return new_symbol(sym.SEMI, yytext()); }
@@ -73,6 +79,7 @@ import java_cup.runtime.Symbol;
 "}"			{ return new_symbol(sym.RBRACE, yytext()); }
 "[" 		{ return new_symbol(sym.LBRACKET, yytext()); }
 "]" 		{ return new_symbol(sym.RBRACKET, yytext()); }
+":" 		{ return new_symbol(sym.COLON, yytext()); }
 
 "//" 		     { yybegin(COMMENT); }
 <COMMENT> .      { yybegin(COMMENT); }
